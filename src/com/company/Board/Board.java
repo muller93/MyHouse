@@ -16,7 +16,7 @@ public class Board {
         players = new Player[totalPlayer];
         this.totalPlayer = totalPlayer;
         for(int i = 0;i < players.length;i++){
-            players[i] = new Player(i, "Player ");
+            players[i] = new Player();
         }
         Random rand = new Random();
         for(int i = 0;i < squares.length;i++){

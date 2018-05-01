@@ -6,7 +6,7 @@ import com.company.Player.Player;
 
 public class BrokenWashingMachine extends Square { //ready
     Player player = new Player();
-    ElectroShop electroShop = new ElectroShop();
+    ElectroShop electroShop = new ElectroShop("Shop");
 
     public BrokenWashingMachine(String name) {
         super(name);

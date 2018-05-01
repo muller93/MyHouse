@@ -5,7 +5,7 @@ import com.company.Board.Square;
 import com.company.Player.Player;
 
 public class ChimneySweeper extends Square {
-    LuckyCard luckyCard = new LuckyCard();
+    LuckyCard luckyCard = new LuckyCard("Card");
 
     public ChimneySweeper(String name) {
         super(name);

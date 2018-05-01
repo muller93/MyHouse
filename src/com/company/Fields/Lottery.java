@@ -6,7 +6,7 @@ import com.company.Player.Player;
 
 public class Lottery extends Square { //ready
     Player player = new Player();
-    LuckyCard luckyCard = new LuckyCard();
+    LuckyCard luckyCard = new LuckyCard("First");
 
     public Lottery(String name) {
         super(name);

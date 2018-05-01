@@ -6,7 +6,7 @@ import com.company.Player.Player;
 
 public class TvBurn extends Square { //ready
     Player player = new Player();
-    ElectroShop electroShop = new ElectroShop();
+    ElectroShop electroShop = new ElectroShop("Third");
 
     public TvBurn(String name) {
         super(name);
