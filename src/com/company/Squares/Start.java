@@ -1,18 +1,16 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 public class Start extends Square {
+    Player player = new Player();
 
-    public Start(String name) {
-        super(name);
+    public Start() {
     }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
+    public void atStart(){
+        player.setMoney(player.getMoney() + 6000);
     }
 }
 /*- Startmező. Ha ezen áthaladsz, 4.000 Ft-ot kapsz fizetésként,

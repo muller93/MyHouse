@@ -1,18 +1,12 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 public class FreeParking extends Square{
 
-    public FreeParking(String name) {
-        super(name);
-    }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
+    public FreeParking() {
     }
 
     public void freeP(){

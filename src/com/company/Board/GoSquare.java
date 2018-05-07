@@ -1,9 +1,5 @@
 package com.company.Board;
 
-import com.company.Player.Player;
-
-import javax.rmi.CORBA.Util;
-
 /*public class GoSquare extends Square {
     public GoSquare(String name) {
         super(name);

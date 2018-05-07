@@ -1,17 +1,15 @@
 package com.company.Board;
 
-import com.company.Player.Player;
+import com.company.Player;
 
 public abstract class Square {
     String name;
 
-    public Square(String name) {
-        this.name = name;
+    public Square() {
+
     }
 
     public String getName() {
         return name;
     }
-
-    public abstract void doAction(Player player, Board board);
 }

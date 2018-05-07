@@ -1,15 +1,14 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 public class Lottery extends Square { //ready
     Player player = new Player();
-    LuckyCard luckyCard = new LuckyCard("First");
+    LuckyCard luckyCard = new LuckyCard();
 
-    public Lottery(String name) {
-        super(name);
+    public Lottery() {
     }
 
     public void gambling(){
@@ -19,9 +18,5 @@ public class Lottery extends Square { //ready
 
     }
 
-    @Override
-    public void doAction(Player player, Board board) {
-
-    }
 }
 /*- Lottóztál, fizess 50 Ft-ot, és húzz egy szerencsekártyát!*/

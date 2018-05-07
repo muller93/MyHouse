@@ -1,10 +1,9 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,8 +16,7 @@ public class FurnitureShop extends Square {
     private int bedPrice = 4000;
     private boolean furnitureError = false;
 
-    public FurnitureShop(String name) {
-        super(name);
+    public FurnitureShop() {
     }
 
 
@@ -110,11 +108,6 @@ public class FurnitureShop extends Square {
                 System.out.println("Ok.");
                 break;
         }
-    }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
     }
 }
 /*- Bútorbolt, itt vásárolhatsz bútorokat.*/

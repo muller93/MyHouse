@@ -1,8 +1,8 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 import java.util.*;
 
@@ -10,8 +10,7 @@ public class LuckyCard extends Square { //ok
     private String message;
     private int value;
 
-    public LuckyCard(String name) {
-        super(name);
+    public LuckyCard() {
     }
 
     public String getMessage() {
@@ -56,10 +55,6 @@ public class LuckyCard extends Square { //ok
         player.setMoney(- val);
     }
 
-    @Override
-    public void doAction(Player player, Board board) {
-
-    }
 }
 /*A szerencsekártyákat véletlenszerűen kell generálni;
 mindegyiknek van egy üzenete (pl. Új cipőt kell venned,

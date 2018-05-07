@@ -1,15 +1,14 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 public class TvBurn extends Square { //ready
     Player player = new Player();
-    ElectroShop electroShop = new ElectroShop("Third");
+    ElectroShop electroShop = new ElectroShop();
 
-    public TvBurn(String name) {
-        super(name);
+    public TvBurn() {
     }
 
     public void tvBurn(){
@@ -25,11 +24,6 @@ public class TvBurn extends Square { //ready
         } else {
             System.out.println("You don't have tv.");
         }
-    }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
     }
 }
 /*- Kigyulladt a tévéd (ha volt). Ha van biztosításod, visszakapod az árát.*/

@@ -1,8 +1,8 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -16,8 +16,7 @@ public class ElectroShop extends Square{
     private boolean electroErr = false;
     private int scan;
 
-    public ElectroShop(String name) {
-        super(name);
+    public ElectroShop() {
     }
 
 
@@ -35,7 +34,6 @@ public class ElectroShop extends Square{
                 int scan;
                 scan = sc.nextInt();
                 if (!(scan < 1 && scan > 5)) {
-                    System.out.println("Wrong input. Please give a number between 1-5.");
                     electroErr = true;
                 }
                 sw(scan);
@@ -149,10 +147,5 @@ public class ElectroShop extends Square{
 
     public void setRadioPrice(int radioPrice) {
         this.radioPrice = radioPrice;
-    }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
     }
 }

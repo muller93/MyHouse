@@ -1,8 +1,8 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -12,8 +12,7 @@ public class Insurer extends Square {
     private int insurePrice = 1000;
     private boolean insureError;
 
-    public Insurer(String name) {
-        super(name);
+    public Insurer() {
     }
 
     public void getInsure() throws Exception { //ready
@@ -60,11 +59,6 @@ public class Insurer extends Square {
                 System.out.println("Ok. Maybe next time.");
                 break;
         }
-    }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
     }
 }
 

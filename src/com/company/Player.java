@@ -1,4 +1,4 @@
-package com.company.Player;
+package com.company;
 
 public class Player {
     private int money = 50000;

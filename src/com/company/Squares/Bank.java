@@ -1,8 +1,8 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -13,8 +13,7 @@ public class Bank extends Square {
     private int maxLoan = 15000;
     private int canLoan = maxLoan - player.getHowManyDebit();
 
-    public Bank(String name) {
-        super(name);
+    public Bank() {
     }
 
     public void takeUpLoan(){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
@@ -99,11 +98,6 @@ public class Bank extends Square {
                 System.out.println("Ok.");
                 break;
         }
-    }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
     }
 }
 

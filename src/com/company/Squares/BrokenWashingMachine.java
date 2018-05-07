@@ -1,15 +1,14 @@
-package com.company.Fields;
+package com.company.Squares;
 
 import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player.Player;
+import com.company.Player;
 
 public class BrokenWashingMachine extends Square { //ready
     Player player = new Player();
-    ElectroShop electroShop = new ElectroShop("Shop");
+    ElectroShop electroShop = new ElectroShop();
 
-    public BrokenWashingMachine(String name) {
-        super(name);
+    public BrokenWashingMachine() {
     }
 
     public void washMach(){
@@ -25,11 +24,6 @@ public class BrokenWashingMachine extends Square { //ready
         } else {
             System.out.println("You don't have washing machine.");
         }
-    }
-
-    @Override
-    public void doAction(Player player, Board board) {
-
     }
 }
 /*- Elromlott a mosógéped (ha volt). Ha van biztosításod, visszakapod az árát*/
