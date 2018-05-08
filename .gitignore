@@ -1,7 +1,7 @@
 *gradle*
-.iml
-.gradle/
-.idea/
-.out/
-.production/
-.gradle
+*.iml
+.gradle/*
+.idea/*
+.out/*
+.production/*
+.gradle/*
