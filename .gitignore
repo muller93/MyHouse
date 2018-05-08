@@ -1,2 +1,7 @@
-**gradle**
-**.iml
+*gradle*
+.iml
+.gradle/
+.idea/
+.out/
+.production/
+.gradle

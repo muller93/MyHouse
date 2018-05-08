@@ -25,6 +25,9 @@ public class Board {
     Start start = new Start();
     TvBurn tvBurn = new TvBurn();
 
+    public Board() {
+
+    }
 
     public ArrayList<Square> createSquares(){
         ArrayList<Square> squares = new ArrayList<>();
@@ -34,6 +37,8 @@ public class Board {
         }
         return squares;
     }
+
+
 
     int currentTurn = 0;
     int totalPlayer = 0;
@@ -48,11 +53,14 @@ public class Board {
         }
         catch(Exception e)
         {}
+        System.out.println(player.getCurrentPosition());
         player.setPosition(player.getCurrentPosition() + dice.throwDice());
         if (player.getCurrentPosition() > 20){
             player.setPosition(player.getCurrentPosition() - 20);
             player.setMoney(player.getMoney() + 4000);
+            System.out.println(player.getCurrentPosition());
         }
+        //nextTurn();
         return player.getCurrentPosition();
     }
 
@@ -60,7 +68,8 @@ public class Board {
         players = new Player[totalPlayer];
         this.totalPlayer = totalPlayer;
         for (int i = 0; i < players.length; i++) {
-            players[i] = new Player();
+            players[i] = new Player(i, "Player " + (i + 1));
+            System.out.println(players);
         }
     }
 
@@ -79,7 +88,8 @@ public class Board {
                     break;
 
                 case 4: squares[4] = new Tram();
-
+                    tram.travel();
+                    break;
 
                 case 5: squares[5] = new LuckyCard();
                     luckyCard.luckyCards();
@@ -143,4 +153,9 @@ public class Board {
                 case 20: squares[20] = new Tram();
             }
         }
+    /*public void nextTurn() {
+        if(++currentTurn >= players.length){
+            currentTurn = 0;
+        }
+    }*/
 }

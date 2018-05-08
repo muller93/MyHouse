@@ -1,14 +1,13 @@
 package com.company;
 
 public class Player {
-    private int money = 50000;
+    private int money = 25000;
     private boolean house = false;
     private boolean insure = false;
 
     private int totalWalk = 0;
     private int position = 0;
     private int id;
-    private boolean brokeOut = false;
     private String name;
 
     private boolean armchair = false;
@@ -21,11 +20,15 @@ public class Player {
     private boolean radio = false;
 
     private boolean debit = false;
-    private int howManyDebit = 5000;
+    private int howManyDebit = 0;
 
-    public Player() {
+    public Player(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Player() {
+
     }
 
     public int getMoney() {
@@ -79,14 +82,6 @@ public class Player {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public boolean isBrokeOut() {
-        return brokeOut;
-    }
-
-    public void setBrokeOut(boolean brokeout) {
-        this.brokeOut = brokeout;
     }
 
     public String getName() {
