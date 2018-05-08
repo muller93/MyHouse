@@ -1,7 +1,8 @@
-*gradle*
+/.gradle/
 *.iml
-.gradle/*
-.idea/*
-.out/*
-.production/*
-.gradle/*
+/.idea/*
+/out/
+/.production/*
+/gradle/
+gradlew
+gradlew.bat
