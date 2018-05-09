@@ -16,8 +16,12 @@ public class MyHouse {
     }
 
     public static void main(String[] args) throws Exception {
-        MyHouse myHouse = new MyHouse();
+    MyHouse myHouse = new MyHouse();
 
+    myHouse.playing();
+    }
+    public void playing() throws Exception {
+        MyHouse myHouse = new MyHouse();
 
         System.out.println("\tMy House\n");
         Scanner scanner = new Scanner(System.in);
@@ -40,6 +44,7 @@ public class MyHouse {
         MyHouse game = new MyHouse(totalPlayer);
         game.startGame();
     }
+
     public void startGame() throws Exception {
             Board board = new Board();
             board.table(board.move());

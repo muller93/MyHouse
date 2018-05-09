@@ -18,7 +18,7 @@ public class Bank extends Square {
 
     public void takeUpLoan(){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
         System.out.println("Bank field" + '\n' + "---- -----");
-        System.out.println("Your currently debit is " + player.getHowManyDebit() + "You can take up " + canLoan);
+        System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + canLoan);
         System.out.println("Welcome to our bank. What do you want? Please select a number.");
         System.out.println("1. I want take up 5000");
         System.out.println("2. I want take up 10000");
@@ -33,7 +33,6 @@ public class Bank extends Square {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
                 if (!(scan < 1 && scan > 5)) {
-                    System.out.println("Wrong input. Please give a number between 1-5.");
                     bankError = true;
                 }
                 sw(scan);

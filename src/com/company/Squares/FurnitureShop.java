@@ -1,6 +1,5 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
@@ -35,10 +34,9 @@ public class FurnitureShop extends Square {
                     sc = new Scanner(System.in);
                     scan = sc.nextInt();
                     if (!(scan < 1 && scan > 5)) {
-                        System.out.println("Wrong input. Please give a number between 1-5.");
                         furnitureError = true;
                     }
-                    sw(scan);
+                    selector(scan);
                 } catch (InputMismatchException ex) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     furnitureError = true;
@@ -51,7 +49,7 @@ public class FurnitureShop extends Square {
         sc.close();
     }
 
-    public void sw(int scan){
+    public void selector(int scan){
         switch (scan) {
             case 1:
                 if (player.getMoney() >= armchairPrice) {

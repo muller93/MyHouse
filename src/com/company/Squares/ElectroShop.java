@@ -1,5 +1,6 @@
 package com.company.Squares;
 
+import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
@@ -21,7 +22,7 @@ public class ElectroShop extends Square{
 
     public void electroShop() throws Exception { //ready
         System.out.println("Electro Shop field" + '\n' + "------- ---- -----");
-        System.out.println("Do you want buy any electonic device? Please enter a number.");
+        System.out.println("Your money: " + player.getMoney() + '\n' + "Do you want buy any electronic device? Please enter a number.");
         System.out.println("1. Washing machine. Price: " + washMachPrice);
         System.out.println("2. TV. Price: " + tvPrice);
         System.out.println("3. Hoover. Price: " + hooverPrice);
