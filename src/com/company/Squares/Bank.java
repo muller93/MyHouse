@@ -1,6 +1,5 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
@@ -35,20 +34,19 @@ public class Bank extends Square {
                 if (!(scan < 1 && scan > 5)) {
                     bankError = true;
                 }
-                sw(scan);
+                selector(scan);
             } catch (InputMismatchException ex) {
                 System.out.println("Wrong input. Please give a number between 1-5.");
                 bankError = true;
             } catch (Exception e){
                 e.printStackTrace();
-                System.exit(1);
+                System.exit(18);
             }
 
         } while (bankError);
-        sc.close();
     }
 
-    public void sw(int scan) {
+    public void selector(int scan) {
         bankError = false;
         //System.out.println(player.getMoney());
         switch (scan) {

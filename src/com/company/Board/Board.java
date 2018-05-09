@@ -44,30 +44,21 @@ public class Board {
     Player[] players;
     Square[] squares = new Square[20];
 
-    public int getCurrPos() {
-        return currPos;
-    }
-
-    public void setCurrPos(int currPos) {
-        this.currPos = currPos;
-    }
-
-    int currPos = player.getCurrentPosition();
-
 
     public int move(){
-        System.out.println("Your turn. Current position is " + currPos + ". If you want throw with dice, please press any button and press enter.");
+        System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". If you want throw with dice, please press any button and press enter.");
         Scanner scanner = new Scanner(System.in);
 
         scanner.nextLine();
 
         int throwing = dice.throwDice();
         player.setPosition(player.getCurrentPosition() + throwing);
-        System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
         if (player.getCurrentPosition() > 19){
-            player.setPosition(player.getCurrentPosition() - 20);
+            player.setPosition(player.getCurrentPosition() - 19);
             player.setMoney(player.getMoney() + 4000);
+            System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
         }
+        System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
         return player.getCurrentPosition();
     }
 
@@ -105,6 +96,7 @@ public class Board {
                 case 5: squares[5] = new LuckyCard();
                     luckyCard.luckyCards();
                     table(move());
+
                     break;
 
                 case 6: squares[6] = new TvBurn();
@@ -120,6 +112,7 @@ public class Board {
                 case 8: squares[8] = new FurnitureShop();
                     furnitureShop.furnitureShop();
                     table(move());
+
                     break;
 
                 case 9: squares[9] = new LuckyCard();

@@ -36,7 +36,7 @@ public class Insurer extends Square {
                     }
                     selector(scan);
                 } catch (InputMismatchException ex) {
-                    System.out.println("Wrong input. Please give a number between 1-5.");
+                    System.out.println("Wrong input. Please give 1 or 2.");
                     insureError = true;
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -31,23 +31,24 @@ public class ElectroShop extends Square{
         System.out.println("5. No, thanks.");
         Scanner sc = null;
         do {
-            try {
-                sc = new Scanner(System.in);
-                int scan;
-                scan = sc.nextInt();
-                if (!(scan < 1 && scan > 5)) {
+            do {
+                try {
+                    sc = new Scanner(System.in);
+                    scan = sc.nextInt();
+                    if (scan < 1 && scan > 5) {
+                        System.out.println("Wrong input. Please give 1 or 2.");
+                        electroErr = true;
+                    }
+                    selector(scan);
+                } catch (InputMismatchException ex) {
+                    System.out.println("Wrong input. Please give a number between 1-5.");
                     electroErr = true;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.exit(1);
                 }
-                selector(scan);
-            }
-            catch (InputMismatchException ex) {
-                System.out.println("Wrong input. Please give a number between 1-5.");
-                electroErr = true;
-            }catch(Exception ex){
-                electroErr = true;
-            }
-        } while (electroErr);
-        sc.close();
+            } while (electroErr);
+        }while (electroErr);
     }
 
     public void selector(int scan) throws Exception {
@@ -106,8 +107,6 @@ public class ElectroShop extends Square{
                 break;
             case 5:
                 System.out.println("Ok.");
-                Board board = new Board();
-                board.table(board.getCurrPos());
                 break;
         }
     }

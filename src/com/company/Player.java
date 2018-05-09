@@ -1,12 +1,12 @@
 package com.company;
 
 public class Player {
-    private int money = 25000;
+    private int money = 10000;
     private boolean house = false;
     private boolean insure = false;
 
     private int totalWalk = 0;
-    private int position = 11;
+    private int position = 1;
     private int id;
     private String name;
 
@@ -14,7 +14,7 @@ public class Player {
     private boolean couch = false;
     private boolean kitchenFurniture = false;
     private boolean hoover = false;
-    private boolean tv = true;
+    private boolean tv = false;
     private boolean bed = false;
     private boolean washingMachine = false;
     private boolean radio = false;

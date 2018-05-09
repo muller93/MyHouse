@@ -31,23 +31,25 @@ public class FurnitureShop extends Square {
             int scan = 0;
         Scanner sc = null;
         do {
-                try {
-                    sc = new Scanner(System.in);
-                    scan = sc.nextInt();
-                    if (!(scan < 1 && scan > 5)) {
-                        furnitureError = true;
-                    }
-                    selector(scan);
-                } catch (InputMismatchException ex) {
-                    System.out.println("Wrong input. Please give a number between 1-5.");
+            try {
+                sc = new Scanner(System.in);
+                scan = sc.nextInt();
+                if (scan < 1 && scan > 2) {
+                    System.out.println("Wrong input. Please give 1 or 2.");
                     furnitureError = true;
-                } catch (Exception e){
-                    e.printStackTrace();
-                    System.exit(1);
                 }
+                selector(scan);
+            } catch (InputMismatchException ex) {
+                System.out.println("Wrong input. Please give a number between 1-5.");
+                furnitureError = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(13);
+            }
 
-                } while (furnitureError);
+        } while (furnitureError);
     }
+
 
     public void selector(int scan) throws Exception {
         switch (scan) {
@@ -105,8 +107,6 @@ public class FurnitureShop extends Square {
                 break;
             case 5:
                 System.out.println("Ok.");
-                Board board = new Board();
-                board.table(board.getCurrPos());
                 break;
         }
     }
