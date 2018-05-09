@@ -4,6 +4,7 @@ import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
+import javax.swing.border.Border;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -49,7 +50,7 @@ public class ElectroShop extends Square{
         sc.close();
     }
 
-    public void selector(int scan) {
+    public void selector(int scan) throws Exception {
         switch (scan) {
             case 1:
                 if (player.getMoney() >= washMachPrice) {
@@ -105,6 +106,8 @@ public class ElectroShop extends Square{
                 break;
             case 5:
                 System.out.println("Ok.");
+                Board board = new Board();
+                board.table(board.getCurrPos());
                 break;
         }
     }

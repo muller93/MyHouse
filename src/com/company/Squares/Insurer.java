@@ -1,6 +1,5 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
@@ -35,7 +34,7 @@ public class Insurer extends Square {
                         System.out.println("Wrong input. Please give 1 or 2.");
                         insureError = true;
                     }
-                    sw(scan);
+                    selector(scan);
                 } catch (InputMismatchException ex) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     insureError = true;
@@ -45,11 +44,10 @@ public class Insurer extends Square {
                 }
 
             } while (insureError);
-            sc.close();
         }
     }
 
-    public void sw(int scan){
+    public void selector(int scan){
         switch (scan) {
             case 1:
                 player.setInsure(true);

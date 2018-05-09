@@ -21,8 +21,6 @@ public class MyHouse {
     myHouse.playing();
     }
     public void playing() throws Exception {
-        MyHouse myHouse = new MyHouse();
-
         System.out.println("\tMy House\n");
         Scanner scanner = new Scanner(System.in);
         int totalPlayer = 0;

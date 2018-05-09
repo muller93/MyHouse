@@ -44,9 +44,19 @@ public class Board {
     Player[] players;
     Square[] squares = new Square[20];
 
+    public int getCurrPos() {
+        return currPos;
+    }
+
+    public void setCurrPos(int currPos) {
+        this.currPos = currPos;
+    }
+
+    int currPos = player.getCurrentPosition();
+
 
     public int move(){
-        System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". If you want throw with dice, please press any button and press enter.");
+        System.out.println("Your turn. Current position is " + currPos + ". If you want throw with dice, please press any button and press enter.");
         Scanner scanner = new Scanner(System.in);
 
         scanner.nextLine();
@@ -54,7 +64,7 @@ public class Board {
         int throwing = dice.throwDice();
         player.setPosition(player.getCurrentPosition() + throwing);
         System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
-        if (player.getCurrentPosition() > 20){
+        if (player.getCurrentPosition() > 19){
             player.setPosition(player.getCurrentPosition() - 20);
             player.setMoney(player.getMoney() + 4000);
         }
