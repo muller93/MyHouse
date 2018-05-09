@@ -6,7 +6,7 @@ public class Player {
     private boolean insure = false;
 
     private int totalWalk = 0;
-    private int position = 0;
+    private int position = 1;
     private int id;
     private String name;
 

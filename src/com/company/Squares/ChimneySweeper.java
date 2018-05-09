@@ -11,6 +11,7 @@ public class ChimneySweeper extends Square {
     }
 
     public void chimneyLuck(){ //ready
+        System.out.println("Chimney Sweeper field" + '\n' + "------- ------- -----");
         System.out.println("You saw a chimney sweeper! Pull a luckycard.");
         luckyCard.luckyCards();
     }

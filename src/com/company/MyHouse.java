@@ -18,6 +18,7 @@ public class MyHouse {
     public static void main(String[] args) throws Exception {
         MyHouse myHouse = new MyHouse();
 
+
         System.out.println("\tMy House\n");
         Scanner scanner = new Scanner(System.in);
         int totalPlayer = 0;
@@ -35,7 +36,7 @@ public class MyHouse {
                 System.err.println("Error: Invalid player count.");
             }
         }
-        scanner.close();
+
         MyHouse game = new MyHouse(totalPlayer);
         game.startGame();
     }

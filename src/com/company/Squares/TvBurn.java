@@ -12,6 +12,7 @@ public class TvBurn extends Square { //ready
     }
 
     public void tvBurn(){
+        System.out.println("TV Burn field" + '\n' + "-- ---- -----");
         if (player.isTv()){
             if (player.isInsure()) {
                 System.out.println("Your tv is burned, but you have insure, so you got back the money.");

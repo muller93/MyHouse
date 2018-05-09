@@ -16,6 +16,7 @@ public class Insurer extends Square {
     }
 
     public void getInsure() throws Exception { //ready
+        System.out.println("Insurer field" + '\n' + "------- -----");
         if (player.isInsure()) {
             System.out.println("You already have insure.");
         } else if (player.getMoney() < insurePrice) {

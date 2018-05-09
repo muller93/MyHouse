@@ -30,6 +30,7 @@ public class LuckyCard extends Square { //ok
     }
 
     public void luckyCards() {
+        System.out.println("Lucky Card field" + '\n' + "----- ---- -----");
         Map<String, Integer> cards = new HashMap<>();
         Player player = new Player();
         //decrase

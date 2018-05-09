@@ -10,6 +10,8 @@ public class Start extends Square {
     public Start() {
     }
     public void atStart(){
+        System.out.println("Start field" + '\n' + "----- -----" + '\n' +
+        "You got " + 6000 + "Ft");
         player.setMoney(player.getMoney() + 6000);
     }
 }

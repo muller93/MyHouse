@@ -1,6 +1,5 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
@@ -21,6 +20,7 @@ public class ElectroShop extends Square{
 
 
     public void electroShop() throws Exception { //ready
+        System.out.println("Electro Shop field" + '\n' + "------- ---- -----");
         System.out.println("Do you want buy any electonic device? Please enter a number.");
         System.out.println("1. Washing machine. Price: " + washMachPrice);
         System.out.println("2. TV. Price: " + tvPrice);
@@ -36,7 +36,7 @@ public class ElectroShop extends Square{
                 if (!(scan < 1 && scan > 5)) {
                     electroErr = true;
                 }
-                sw(scan);
+                selector(scan);
             }
             catch (InputMismatchException ex) {
                 System.out.println("Wrong input. Please give a number between 1-5.");
@@ -48,7 +48,7 @@ public class ElectroShop extends Square{
         sc.close();
     }
 
-    public void sw(int scan) {
+    public void selector(int scan) {
         switch (scan) {
             case 1:
                 if (player.getMoney() >= washMachPrice) {

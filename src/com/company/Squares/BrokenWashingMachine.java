@@ -12,6 +12,7 @@ public class BrokenWashingMachine extends Square { //ready
     }
 
     public void washMach(){
+        System.out.println("Broken Washing Machine field" + '\n' + "------ ------- ------- -----");
         if (player.isWashingMachine()){
             if (player.isInsure()){
                 System.out.println("Your washing machine is ruined, but you have insure. You get back the money.");

@@ -11,6 +11,7 @@ public class Littering extends Square { //ready
     }
 
     public void litter(){
+        System.out.println("Littering field" + '\n' + "--------- -----");
         player.setMoney(player.getMoney()- 200);
         System.out.println("You littered. That wasn't a nice thing. You have to pay 200Ft.");
     }

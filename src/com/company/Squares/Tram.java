@@ -8,6 +8,7 @@ import com.company.Player;
 public class Tram extends Square {
 //Board board = new Board();
     public void travel() {
+        System.out.println("Tram field" + '\n' + "---- -----");
         System.out.println("You travelled with tram. You can throw again.");
         //board.move();
     }
