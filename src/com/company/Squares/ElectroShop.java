@@ -9,7 +9,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ElectroShop extends Square{
-    Player player = new Player();
     private int washMachPrice = 6000;
     private int tvPrice = 8000;
     private int hooverPrice = 3000;
@@ -21,9 +20,9 @@ public class ElectroShop extends Square{
     }
 
 
-    public void electroShop() throws Exception { //ready
+    public void electroShop(Player player) throws Exception { //ready
         System.out.println("Electro Shop field" + '\n' + "------- ---- -----");
-        System.out.println("Your money: " + player.getMoney() + '\n' + "Do you want buy any electronic device? Please enter a number.");
+        System.out.println("Your money: " + player.getMoney() + '\n' + "Do you want buy any electronic device? Please enter a number. Your money: " + player.getMoney());
         System.out.println("1. Washing machine. Price: " + washMachPrice);
         System.out.println("2. TV. Price: " + tvPrice);
         System.out.println("3. Hoover. Price: " + hooverPrice);
@@ -39,7 +38,7 @@ public class ElectroShop extends Square{
                         System.out.println("Wrong input. Please give 1 or 2.");
                         electroErr = true;
                     }
-                    selector(scan);
+                    selector(scan, player);
                 } catch (InputMismatchException ex) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     electroErr = true;
@@ -51,7 +50,7 @@ public class ElectroShop extends Square{
         }while (electroErr);
     }
 
-    public void selector(int scan) throws Exception {
+    public void selector(int scan, Player player) throws Exception {
         switch (scan) {
             case 1:
                 if (player.getMoney() >= washMachPrice) {
@@ -109,15 +108,6 @@ public class ElectroShop extends Square{
                 System.out.println("Ok.");
                 break;
         }
-    }
-
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 
     public int getWashMachPrice() {

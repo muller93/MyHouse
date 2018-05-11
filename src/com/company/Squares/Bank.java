@@ -7,16 +7,16 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Bank extends Square {
-    Player player = new Player();
     private boolean bankError;
     private int maxLoan = 15000;
-    private int canLoan = maxLoan - player.getHowManyDebit();
+    private int canLoan = 15000;
 
     public Bank() {
     }
 
-    public void takeUpLoan(){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
+    public void takeUpLoan(Player player){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
         System.out.println("Bank field" + '\n' + "---- -----");
+        System.out.println(" Your money: " + player.getMoney());
         System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + canLoan);
         System.out.println("Welcome to our bank. What do you want? Please select a number.");
         System.out.println("1. I want take up 5000");
@@ -34,7 +34,7 @@ public class Bank extends Square {
                 if (!(scan < 1 && scan > 5)) {
                     bankError = true;
                 }
-                selector(scan);
+                selector(scan, player);
             } catch (InputMismatchException ex) {
                 System.out.println("Wrong input. Please give a number between 1-5.");
                 bankError = true;
@@ -46,7 +46,7 @@ public class Bank extends Square {
         } while (bankError);
     }
 
-    public void selector(int scan) {
+    public void selector(int scan, Player player) {
         bankError = false;
         //System.out.println(player.getMoney());
         switch (scan) {

@@ -7,15 +7,16 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Insurer extends Square {
-    Player player = new Player();
     private int insurePrice = 1000;
     private boolean insureError;
 
     public Insurer() {
     }
 
-    public void getInsure() throws Exception { //ready
+    public void getInsure(Player player) throws Exception { //ready
         System.out.println("Insurer field" + '\n' + "------- -----");
+        System.out.println(" Your money: " + player.getMoney());
+
         if (player.isInsure()) {
             System.out.println("You already have insure.");
         } else if (player.getMoney() < insurePrice) {
@@ -34,7 +35,7 @@ public class Insurer extends Square {
                         System.out.println("Wrong input. Please give 1 or 2.");
                         insureError = true;
                     }
-                    selector(scan);
+                    selector(scan, player);
                 } catch (InputMismatchException ex) {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     insureError = true;
@@ -47,7 +48,7 @@ public class Insurer extends Square {
         }
     }
 
-    public void selector(int scan){
+    public void selector(int scan, Player player){
         switch (scan) {
             case 1:
                 player.setInsure(true);

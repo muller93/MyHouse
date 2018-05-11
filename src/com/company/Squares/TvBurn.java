@@ -5,13 +5,12 @@ import com.company.Board.Square;
 import com.company.Player;
 
 public class TvBurn extends Square { //ready
-    Player player = new Player();
     ElectroShop electroShop = new ElectroShop();
 
     public TvBurn() {
     }
 
-    public void tvBurn(){
+    public void tvBurn(Player player){
         System.out.println("TV Burn field" + '\n' + "-- ---- -----");
         if (player.isTv()){
             if (player.isInsure()) {

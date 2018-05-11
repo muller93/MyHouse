@@ -46,7 +46,7 @@ public class Board {
 
 
     public int move(){
-        System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". If you want throw with dice, please press any button and press enter.");
+        System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + ". If you want throw with dice, please press any button and press enter.");
         Scanner scanner = new Scanner(System.in);
 
         scanner.nextLine();
@@ -84,7 +84,7 @@ public class Board {
                     break;
 
                 case 3: squares[3] = new ElectroShop();
-                    electroShop.electroShop();
+                    electroShop.electroShop(player);
                     table(move());
                     break;
 
@@ -100,17 +100,17 @@ public class Board {
                     break;
 
                 case 6: squares[6] = new TvBurn();
-                    tvBurn.tvBurn();
+                    tvBurn.tvBurn(player);
                     table(move());
                     break;
 
                 case 7: squares[7] = new Littering();
-                    littering.litter();
+                    littering.litter(player);
                     table(move());
                     break;
 
                 case 8: squares[8] = new FurnitureShop();
-                    furnitureShop.furnitureShop();
+                    furnitureShop.furnitureShop(player);
                     table(move());
 
                     break;
@@ -126,7 +126,7 @@ public class Board {
                     break;
 
                 case 11: squares[11] = new RealEstate();
-                    realEstate.getHouse();
+                    realEstate.getHouse(player);
                     table(move());
                     break;
 
@@ -134,7 +134,7 @@ public class Board {
                     table(move());
 
                 case 13: squares[13] = new Insurer();
-                    insurer.getInsure();
+                    insurer.getInsure(player);
                     table(move());
                     break;
 
@@ -144,22 +144,22 @@ public class Board {
                     break;
 
                 case 15: squares[15] = new BrokenWashingMachine();
-                    brokenWashingMachine.washMach();
+                    brokenWashingMachine.washMach(player);
                     table(move());
                     break;
 
                 case 16: squares[16] = new Littering();
-                    littering.litter();
+                    littering.litter(player);
                     table(move());
                     break;
 
                 case 17: squares[17] = new Lottery();
-                    lottery.gambling();
+                    lottery.gambling(player);
                     table(move());
                     break;
 
                 case 18: squares[18] = new Bank();
-                    bank.takeUpLoan();
+                    bank.takeUpLoan(player);
                     table(move());
                     break;
 

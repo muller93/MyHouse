@@ -8,15 +8,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RealEstate extends Square { //ready
-    Player player = new Player();
     private int housePrice = 50000;
     private boolean houseError;
 
     public RealEstate() {
     }
 
-    public void getHouse() throws Exception {
+    public void getHouse(Player player) throws Exception {
         System.out.println("Real Estate field" + '\n' + "---- ------ -----");
+        System.out.println(" Your money: " + player.getMoney());
         if (player.isHouse()) {
             System.out.println("You already have house.");
         } else if (player.getMoney() < housePrice) {
@@ -35,7 +35,7 @@ public class RealEstate extends Square { //ready
                         System.out.println("Wrong input. Please give 1 or 2.");
                         houseError = true;
                     }
-                    sw(scan);
+                    sw(scan, player);
                 } catch (InputMismatchException ex) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     houseError = true;
@@ -48,7 +48,7 @@ public class RealEstate extends Square { //ready
             sc.close();
         }
     }
-    public void sw(int scan){
+    public void sw(int scan, Player player){
         switch (scan) {
             case 1:
                 player.setHouse(true);

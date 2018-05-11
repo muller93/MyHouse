@@ -5,14 +5,15 @@ import com.company.Board.Square;
 import com.company.Player;
 
 public class BrokenWashingMachine extends Square { //ready
-    Player player = new Player();
     ElectroShop electroShop = new ElectroShop();
 
     public BrokenWashingMachine() {
     }
 
-    public void washMach(){
+    public void washMach(Player player){
         System.out.println("Broken Washing Machine field" + '\n' + "------ ------- ------- -----");
+        System.out.println(" Your money: " + player.getMoney());
+
         if (player.isWashingMachine()){
             if (player.isInsure()){
                 System.out.println("Your washing machine is ruined, but you have insure. You get back the money.");

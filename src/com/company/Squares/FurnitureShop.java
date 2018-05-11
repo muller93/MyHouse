@@ -8,8 +8,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FurnitureShop extends Square {
-    Player player = new Player();
-
     private int armchairPrice = 2000; //kettő kell
     private int couchPrice = 5000; //kanapé
     private int kitchenFurnitrePrice = 6000;
@@ -20,8 +18,10 @@ public class FurnitureShop extends Square {
     }
 
 
-    public void furnitureShop() throws Exception { //ready
+    public void furnitureShop(Player player) throws Exception { //ready
         System.out.println("Furniture Shop field" + '\n' + "--------- ---- -----");
+        System.out.println(" Your money: " + player.getMoney());
+
         System.out.println("Do you want buy any furniture? Please enter a number.");
         System.out.println("1. Armchair. Price: " + armchairPrice);
         System.out.println("2. Couch. Price: " + couchPrice);
@@ -38,7 +38,7 @@ public class FurnitureShop extends Square {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     furnitureError = true;
                 }
-                selector(scan);
+                selector(scan, player);
             } catch (InputMismatchException ex) {
                 System.out.println("Wrong input. Please give a number between 1-5.");
                 furnitureError = true;
@@ -51,7 +51,7 @@ public class FurnitureShop extends Square {
     }
 
 
-    public void selector(int scan) throws Exception {
+    public void selector(int scan, Player player) throws Exception {
         switch (scan) {
             case 1:
                 if (player.getMoney() >= armchairPrice) {
