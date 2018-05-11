@@ -29,10 +29,9 @@ public class LuckyCard extends Square { //ok
         this.value = value;
     }
 
-    public void luckyCards() {
+    public void luckyCards(Player player) {
         System.out.println("Lucky Card field" + '\n' + "----- ---- -----" + '\n' + "You pick a lucky card: ");
         Map<String, Integer> cards = new HashMap<>();
-        Player player = new Player();
         //decrase
         cards.put("You bought a new shoes. Decrease your money with 50Ft.", 50);
         cards.put("You were driving too fast and got a penalty. Decrase your money with 300Ft.", 300);
@@ -53,7 +52,7 @@ public class LuckyCard extends Square { //ok
         Integer val = cards.get(message);
         System.out.println(message); //random select from map
 
-        player.setMoney(- val);
+        player.setMoney(player.getMoney() - val);
     }
 
 }

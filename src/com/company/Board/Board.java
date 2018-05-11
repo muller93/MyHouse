@@ -79,7 +79,7 @@ public class Board {
                     break;
 
                 case 2: squares[2] = new ChimneySweeper();
-                    chimneySweeper.chimneyLuck();
+                    chimneySweeper.chimneyLuck(player);
                     table(move());
                     break;
 
@@ -94,7 +94,7 @@ public class Board {
                     break;
 
                 case 5: squares[5] = new LuckyCard();
-                    luckyCard.luckyCards();
+                    luckyCard.luckyCards(player);
                     table(move());
 
                     break;
@@ -116,7 +116,7 @@ public class Board {
                     break;
 
                 case 9: squares[9] = new LuckyCard();
-                    luckyCard.luckyCards();
+                    luckyCard.luckyCards(player);
                     table(move());
                     break;
 
@@ -139,7 +139,7 @@ public class Board {
                     break;
 
                 case 14: squares[14] = new LuckyCard();
-                    luckyCard.luckyCards();
+                    luckyCard.luckyCards(player);
                     table(move());
                     break;
 
@@ -164,7 +164,7 @@ public class Board {
                     break;
 
                 case 19: squares[19] = new LuckyCard();
-                    luckyCard.luckyCards();
+                    luckyCard.luckyCards(player);
                     table(move());
                     break;
 

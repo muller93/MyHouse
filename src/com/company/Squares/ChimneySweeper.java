@@ -10,10 +10,10 @@ public class ChimneySweeper extends Square {
     public ChimneySweeper() {
     }
 
-    public void chimneyLuck(){ //ready
+    public void chimneyLuck(Player player){ //ready
         System.out.println("Chimney Sweeper field" + '\n' + "------- ------- -----");
         System.out.println("You saw a chimney sweeper! Pull a luckycard.");
-        luckyCard.luckyCards();
+        luckyCard.luckyCards(player);
     }
 }
 /*- Kéményseprőt láttál, húzz szerencsekártyát!*/
