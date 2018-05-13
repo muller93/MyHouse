@@ -5,11 +5,10 @@ import com.company.Board.Square;
 import com.company.Player;
 
 public class Start extends Square {
-    Player player = new Player();
 
     public Start() {
     }
-    public void atStart(){
+    public void atStart(Player player){
         System.out.println("Start field" + '\n' + "----- -----" + '\n' +
         "You got " + 6000 + "Ft");
         player.setMoney(player.getMoney() + 6000);

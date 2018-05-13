@@ -50,60 +50,71 @@ public class FurnitureShop extends Square {
         } while (furnitureError);
     }
 
+    public void getArmchair(Player player){
+        if (player.getMoney() >= armchairPrice) {
+            if (!player.isArmchair()) {
+                player.setArmchair(true);
+                player.setMoney(player.getMoney() - armchairPrice);
+                System.out.println("You bought a new armchair. Your money: " + player.getMoney());
+            } else {
+                System.out.println("You already have a armchair.");
+            }
+        } else {
+            System.out.println("You don't have enough money.");
+        }
+    }
+
+    public void getCouch(Player player){
+        if (player.getMoney() >= couchPrice) {
+            if (!player.isCouch()) {
+                player.setCouch(true);
+                player.setMoney(player.getMoney() - couchPrice);
+                System.out.println("You bought a new couch. Your money: " + player.getMoney());
+            } else {
+                System.out.println("You already have a couch.");
+            }
+        } else {
+            System.out.println("You don't have enough money.");
+        }
+    }
+
+    public void getKitchenFurniture(Player player){
+        if (player.getMoney() >= kitchenFurnitrePrice) {
+            if (!player.isKitchenFurniture()) {
+                player.setKitchenFurniture(true);
+                player.setMoney(player.getMoney() - kitchenFurnitrePrice);
+                System.out.println("You bought a new kitchen furniture. Your money: " + player.getMoney());
+            } else {
+                System.out.println("You already have a kitchen furniure.");
+            }
+        } else {
+            System.out.println("You don't have enough money.");
+        }
+    }
+
+    public void getBed(Player player){
+        if (player.getMoney() >= bedPrice) {
+            if (!player.isBed()) {
+                player.setBed(true);
+                player.setMoney(player.getMoney() - bedPrice);
+                System.out.println("You bought a new bed. Your money: " + player.getMoney());
+            } else {
+                System.out.println("You already have a bed.");
+            }
+        } else {
+            System.out.println("You don't have enough money.");
+        }
+    }
 
     public void selector(int scan, Player player) throws Exception {
         switch (scan) {
-            case 1:
-                if (player.getMoney() >= armchairPrice) {
-                    if (!player.isArmchair()) {
-                        player.setArmchair(true);
-                        player.setMoney(player.getMoney() - armchairPrice);
-                        System.out.println("You bought a new armchair. Your money: " + player.getMoney());
-                    } else {
-                        System.out.println("You already have a armchair.");
-                    }
-                } else {
-                    System.out.println("You don't have enough money.");
-                }
+            case 1: getArmchair(player);
                 break;
-            case 2:
-                if (player.getMoney() >= couchPrice) {
-                    if (!player.isCouch()) {
-                        player.setCouch(true);
-                        player.setMoney(player.getMoney() - couchPrice);
-                        System.out.println("You bought a new couch. Your money: " + player.getMoney());
-                    } else {
-                        System.out.println("You already have a couch.");
-                    }
-                } else {
-                    System.out.println("You don't have enough money.");
-                }
+            case 2: getCouch(player);
                 break;
-            case 3:
-                if (player.getMoney() >= kitchenFurnitrePrice) {
-                    if (!player.isKitchenFurniture()) {
-                        player.setKitchenFurniture(true);
-                        player.setMoney(player.getMoney() - kitchenFurnitrePrice);
-                        System.out.println("You bought a new kitchen furniture. Your money: " + player.getMoney());
-                    } else {
-                        System.out.println("You already have a kitchen furniure.");
-                    }
-                } else {
-                    System.out.println("You don't have enough money.");
-                }
+            case 3: getKitchenFurniture(player);
                 break;
-            case 4:
-                if (player.getMoney() >= bedPrice) {
-                    if (!player.isBed()) {
-                        player.setBed(true);
-                        player.setMoney(player.getMoney() - bedPrice);
-                        System.out.println("You bought a new bed. Your money: " + player.getMoney());
-                    } else {
-                        System.out.println("You already have a bed.");
-                    }
-                } else {
-                    System.out.println("You don't have enough money.");
-                }
+            case 4: getBed(player);
                 break;
             case 5:
                 System.out.println("Ok.");

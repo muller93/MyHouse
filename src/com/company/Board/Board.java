@@ -56,7 +56,7 @@ public class Board {
         if (player.getCurrentPosition() > 19){
             player.setPosition(player.getCurrentPosition() - 19);
             player.setMoney(player.getMoney() + 4000);
-            System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
+            System.out.println("You go through the start field, and got 4000Ft.");
         }
         System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
         return player.getCurrentPosition();
@@ -74,7 +74,7 @@ public class Board {
     public void table(int i) throws Exception {
             switch (i){
                 case 1: squares[1] = new Start();
-                    start.atStart();
+                    start.atStart(player);
                     table(move());
                     break;
 

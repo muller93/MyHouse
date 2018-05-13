@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class Bank extends Square {
     private boolean bankError;
     private int maxLoan = 15000;
-    private int canLoan = 15000;
 
     public Bank() {
     }
 
     public void takeUpLoan(Player player){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
+        int canLoan = maxLoan - player.getHowManyDebit();
         System.out.println("Bank field" + '\n' + "---- -----");
         System.out.println(" Your money: " + player.getMoney());
         System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + canLoan);
@@ -46,52 +46,61 @@ public class Bank extends Square {
         } while (bankError);
     }
 
+    public void littleDebit(Player player){
+        if (player.getHowManyDebit() + 5000 < maxLoan) {
+            System.out.println("You get 5000Ft");
+            player.setMoney(player.getMoney() + 5000);
+            player.setHowManyDebit(player.getMoney() + 5000);
+            System.out.println(player.getMoney());
+        } else {
+            System.out.println("You can't take up the debit. You reach the credit limit.");
+        }
+    }
+
+    public void mediumDebit(Player player){
+        if (player.getHowManyDebit() + 10000 < maxLoan) {
+            System.out.println("You get 10000Ft");
+            player.setMoney(player.getMoney() + 10000);
+            player.setHowManyDebit(player.getMoney() + 10000);
+            System.out.println(player.getMoney());
+        } else {
+            System.out.println("You can't take up the debit. You reach the credit limit.");
+        }
+    }
+
+    public void bigDebit(Player player){
+        if (player.getHowManyDebit() + 15000 < maxLoan) {
+            System.out.println("You get 15000Ft");
+            player.setMoney(player.getMoney() + 15000);
+            player.setHowManyDebit(player.getMoney() + 15000);
+            System.out.println(player.getMoney());
+        } else {
+            System.out.println("You can't take up the debit. You reach the credit limit.");
+        }
+    }
+
+    public void refound(Player player){
+        if (player.getHowManyDebit() < player.getMoney()) {
+            System.out.println("You pay back your debit");
+            player.setMoney(player.getMoney() - player.getHowManyDebit());
+            player.setHowManyDebit(0);
+            System.out.println("Your money " + player.getMoney());
+        } else {
+            System.out.println("You don't have enough money. You can't pay back your debit.");
+        }
+    }
+
     public void selector(int scan, Player player) {
         bankError = false;
-        //System.out.println(player.getMoney());
         switch (scan) {
-            case 1:
-                if (player.getHowManyDebit() + 5000 < maxLoan) {
-                    System.out.println("You get 5000Ft");
-                    player.setMoney(player.getMoney() + 5000);
-                    player.setHowManyDebit(player.getMoney() + 5000);
-                    System.out.println(player.getMoney());
-                } else {
-                    System.out.println("You can't take up the debit. You reach the credit limit.");
-                }
+            case 1: littleDebit(player);
                 break;
-
-            case 2:
-                if (player.getHowManyDebit() + 10000 < maxLoan) {
-                    System.out.println("You get 10000Ft");
-                    player.setMoney(player.getMoney() + 10000);
-                    player.setHowManyDebit(player.getMoney() + 10000);
-                    System.out.println(player.getMoney());
-                } else {
-                    System.out.println("You can't take up the debit. You reach the credit limit.");
-                }
+            case 2: mediumDebit(player);
                 break;
-            case 3:
-                if (player.getHowManyDebit() + 15000 < maxLoan) {
-                    System.out.println("You get 15000Ft");
-                    player.setMoney(player.getMoney() + 15000);
-                    player.setHowManyDebit(player.getMoney() + 15000);
-                    System.out.println(player.getMoney());
-                } else {
-                    System.out.println("You can't take up the debit. You reach the credit limit.");
-                }
+            case 3: bigDebit(player);
                 break;
-            case 4:
-                if (player.getHowManyDebit() < player.getMoney()) {
-                    System.out.println("You pay back your debit");
-                    player.setMoney(player.getMoney() - player.getHowManyDebit());
-                    player.setHowManyDebit(0);
-                    System.out.println("Your money " + player.getMoney());
-                } else {
-                    System.out.println("You don't have enough money. You can't pay back your debit.");
-                }
+            case 4: refound(player);
                 break;
-
             case 5:
                 System.out.println("Ok.");
                 break;

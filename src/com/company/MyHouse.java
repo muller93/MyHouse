@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.Board.Board;
+import com.company.Squares.LuckyCard;
 
 import javax.swing.*;
 import java.util.Scanner;
@@ -21,6 +22,7 @@ public class MyHouse {
     myHouse.playing();
     }
     public void playing() throws Exception {
+
         System.out.println("\tMy House\n");
         Scanner scanner = new Scanner(System.in);
         int totalPlayer = 0;
