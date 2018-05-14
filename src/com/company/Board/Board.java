@@ -19,7 +19,7 @@ public class Board {
     BrokenWashingMachine brokenWashingMachine = new BrokenWashingMachine();
     FreeParking freeParking = new FreeParking();
     FurnitureShop furnitureShop = new FurnitureShop();
-    Hollyday hollyday = new Hollyday();
+    GoBack goBack = new GoBack();
     Insurer insurer = new Insurer();
     Littering littering = new Littering();
     Lottery lottery = new Lottery();
@@ -177,7 +177,8 @@ public class Board {
                     table(move());
                     break;
 
-                case 12: squares[12] = new Hollyday();
+                case 12: squares[12] = new GoBack();
+                    goBack.stepBack(player);
                     table(move());
 
                 case 13: squares[13] = new Insurer();

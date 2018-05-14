@@ -32,7 +32,7 @@ public class Player {
     }
 
     public boolean isWin(Player player){
-        if(house && armchair && couch && kitchenFurniture && hoover && tv && bed && washingMachine && radio) {
+        if(howManyDebit == 0 && house && armchair && couch && kitchenFurniture && hoover && tv && bed && washingMachine && radio) {
             return true;
         }
         return false;
