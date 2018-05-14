@@ -1,10 +1,12 @@
 package com.company.Board;
 
 import com.company.Devices.Dice;
+import com.company.MyHouse;
 import com.company.Squares.*;
 import com.company.Player;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Board {
@@ -44,10 +46,13 @@ public class Board {
     Player[] players;
     Square[] squares = new Square[20];
 
-
     public int move() {
         if (player.isWin(player)) {
-            System.out.println("Congratulations, you won!");
+            System.out.println("Congratulations, you won!" + '\n' +
+            "What do you want?" + '\n' +
+                    "1. I want play again" + '\n' +
+                    "2. Exit" );
+            scanning();
         } else {
             System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + ". If you want throw with dice, please press any button and press enter.");
             Scanner scanner = new Scanner(System.in);
@@ -66,6 +71,43 @@ public class Board {
         }
         return player.getCurrentPosition();
     }
+
+
+    public void scanning() {
+        boolean end = false;
+        int scan = 0;
+        Scanner sc = null;
+        do {
+            try {
+                sc = new Scanner(System.in);
+                scan = sc.nextInt();
+                if (scan < 1 && scan > 2) {
+                    System.out.println("Wrong input. Please give 1 or 2.");
+                    end = true;
+                }
+                selector(scan, player);
+            } catch (InputMismatchException ex) {
+                System.out.println("Wrong input. Please give 1 or 2.");
+                end = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+        } while (end);
+    }
+
+    public void selector(int scan, Player player) throws Exception {
+        switch (scan) {
+            case 1:
+                MyHouse myHouse = new MyHouse();
+                myHouse.playing();
+                break;
+            case 2: System.exit(1);
+                break;
+        }
+    }
+
 
     public Board(int totalPlayer) {
         players = new Player[totalPlayer];

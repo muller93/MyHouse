@@ -29,7 +29,7 @@ public class ElectroShop extends Square{
         System.out.println("4. Radio. Price: " + radioPrice);
         System.out.println("5. No, thanks.");
         Scanner sc = null;
-        do {
+
             do {
                 try {
                     sc = new Scanner(System.in);
@@ -47,7 +47,6 @@ public class ElectroShop extends Square{
                     System.exit(1);
                 }
             } while (electroErr);
-        }while (electroErr);
     }
 
     public void getWashMach(Player player){

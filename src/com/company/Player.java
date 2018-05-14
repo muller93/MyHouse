@@ -2,7 +2,7 @@ package com.company;
 
 public class Player {
     private int money = 10000;
-    private boolean house = false;
+    private boolean house = true;
     private boolean insure = false;
 
     private int totalWalk = 0;
@@ -10,13 +10,13 @@ public class Player {
     private int id;
     private String name;
 
-    private boolean armchair = false;
-    private boolean couch = false;
-    private boolean kitchenFurniture = false;
-    private boolean hoover = false;
-    private boolean tv = false;
-    private boolean bed = false;
-    private boolean washingMachine = false;
+    private boolean armchair = true;
+    private boolean couch = true;
+    private boolean kitchenFurniture = true;
+    private boolean hoover = true;
+    private boolean tv = true;
+    private boolean bed = true;
+    private boolean washingMachine = true;
     private boolean radio = false;
 
     private boolean debit = false;
