@@ -45,20 +45,25 @@ public class Board {
     Square[] squares = new Square[20];
 
 
-    public int move(){
-        System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + ". If you want throw with dice, please press any button and press enter.");
-        Scanner scanner = new Scanner(System.in);
+    public int move() {
+        if (player.isWin(player)) {
+            System.out.println("Congratulations, you won!");
+        } else {
+            System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + ". If you want throw with dice, please press any button and press enter.");
+            Scanner scanner = new Scanner(System.in);
 
-        scanner.nextLine();
+            scanner.nextLine();
 
-        int throwing = dice.throwDice();
-        player.setPosition(player.getCurrentPosition() + throwing);
-        if (player.getCurrentPosition() > 19){
-            player.setPosition(player.getCurrentPosition() - 19);
-            player.setMoney(player.getMoney() + 4000);
-            System.out.println("You go through the start field, and got 4000Ft.");
+            int throwing = dice.throwDice();
+            player.setPosition(player.getCurrentPosition() + throwing);
+            if (player.getCurrentPosition() > 19) {
+                player.setPosition(player.getCurrentPosition() - 19);
+                player.setMoney(player.getMoney() + 4000);
+                System.out.println("You go through the start field, and got 4000Ft.");
+            }
+            System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
+            return player.getCurrentPosition();
         }
-        System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
         return player.getCurrentPosition();
     }
 

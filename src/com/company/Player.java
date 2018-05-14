@@ -31,6 +31,13 @@ public class Player {
 
     }
 
+    public boolean isWin(Player player){
+        if(house && armchair && couch && kitchenFurniture && hoover && tv && bed && washingMachine && radio) {
+            return true;
+        }
+        return false;
+    }
+
     public int getMoney() {
         return money;
     }
