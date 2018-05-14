@@ -20,7 +20,7 @@ public class FurnitureShop extends Square {
 
     public void furnitureShop(Player player) throws Exception { //ready
         System.out.println("Furniture Shop field" + '\n' + "--------- ---- -----");
-        System.out.println(" Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney());
 
         System.out.println("Do you want buy any furniture? Please enter a number.");
         System.out.println("1. Armchair. Price: " + armchairPrice);

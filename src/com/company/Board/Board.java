@@ -27,6 +27,7 @@ public class Board {
     RealEstate realEstate = new RealEstate();
     Start start = new Start();
     TvBurn tvBurn = new TvBurn();
+    GoAhead goAhead = new GoAhead();
 
     public Board() {
 
@@ -135,8 +136,8 @@ public class Board {
                     table(move());
                     break;
 
-                case 4: squares[4] = new Tram();
-                    tram.travel();
+                case 4: squares[4] = new GoAhead();
+                    goAhead.goForw(player);
                     table(move());
                     break;
 
@@ -217,6 +218,7 @@ public class Board {
                     break;
 
                 case 20: squares[20] = new Tram();
+                    tram.travel(player);
                     table(move());
             }
         }

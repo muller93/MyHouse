@@ -1,15 +1,14 @@
 package com.company;
 
 public class Player {
-    private int money = 10000;
-    private boolean house = true;
-    private boolean insure = false;
-
     private int totalWalk = 0;
     private int position = 1;
     private int id;
     private String name;
 
+    private int money = 10000;
+    private boolean house = true;
+    private boolean insure = false;
     private boolean armchair = true;
     private boolean couch = true;
     private boolean kitchenFurniture = true;
@@ -19,7 +18,6 @@ public class Player {
     private boolean washingMachine = true;
     private boolean radio = false;
 
-    private boolean debit = false;
     private int howManyDebit = 0;
 
     public Player(int id, String name) {
@@ -161,14 +159,6 @@ public class Player {
 
     public void setRadio(boolean radio) {
         this.radio = radio;
-    }
-
-    public boolean isDebit() {
-        return debit;
-    }
-
-    public void setDebit(boolean debit) {
-        this.debit = debit;
     }
 
     public int getHowManyDebit() {

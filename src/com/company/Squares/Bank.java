@@ -16,7 +16,7 @@ public class Bank extends Square {
     public void takeUpLoan(Player player){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
         int canLoan = maxLoan - player.getHowManyDebit();
         System.out.println("Bank field" + '\n' + "---- -----");
-        System.out.println(" Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney());
         System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + canLoan);
         System.out.println("Welcome to our bank. What do you want? Please select a number.");
         System.out.println("1. I want take up 5000");

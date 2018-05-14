@@ -12,6 +12,8 @@ public class Start extends Square {
         System.out.println("Start field" + '\n' + "----- -----" + '\n' +
         "You got " + 6000 + "Ft");
         player.setMoney(player.getMoney() + 6000);
+        System.out.println("Your money: " + player.getMoney());
+
     }
 }
 /*- Startmező. Ha ezen áthaladsz, 4.000 Ft-ot kapsz fizetésként,
