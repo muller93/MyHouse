@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.util.Scanner;
 
 public class MyHouse {
+    private int totalPlayer;
 
     public MyHouse(int totalPlayer) {
         Board board = new Board(totalPlayer);
@@ -42,11 +43,12 @@ public class MyHouse {
         }
 
         MyHouse game = new MyHouse(totalPlayer);
-        game.startGame();
+        game.startGame(totalPlayer);
     }
 
-    public void startGame() throws Exception {
-            Board board = new Board();
-            board.table(board.move());
+    public void startGame(int totalPlayer) throws Exception {
+        Board board = new Board(totalPlayer);
+        System.out.println(totalPlayer);
+        board.table(board.move());
         }
     }

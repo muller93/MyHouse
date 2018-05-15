@@ -21,8 +21,8 @@ public class FurnitureShop extends Square {
     public void furnitureShop(Player player) throws Exception { //ready
         System.out.println("Furniture Shop field" + '\n' + "--------- ---- -----");
         System.out.println("Your money: " + player.getMoney());
-
         System.out.println("Do you want buy any furniture? Please enter a number.");
+        player.alreadyHaveFurniture();
         System.out.println("1. Armchair. Price: " + armchairPrice);
         System.out.println("2. Couch. Price: " + couchPrice);
         System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice);

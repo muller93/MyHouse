@@ -28,6 +28,36 @@ public class Player {
     public Player() {
 
     }
+    public void alreadyHaveFurniture() {
+        System.out.println("You already have: ");
+        if (isBed()) {
+            System.out.println("-Bed");
+        }
+        if (isKitchenFurniture()) {
+            System.out.println("-Kitchen furniture");
+        }
+        if (isCouch()) {
+            System.out.println("-Couch");
+        }
+        if (isArmchair()) {
+            System.out.println("-Armchair");
+        }
+    }
+    public void alreadyHaveElectro(){
+        System.out.println("You already have: ");
+        if(isRadio()){
+            System.out.println("-Radio");
+        }
+        if (isTv()){
+            System.out.println("-TV");
+        }
+        if (isWashingMachine()){
+            System.out.println("-Washing Machine");
+        }
+        if (isHoover()){
+            System.out.println("-Hoover");
+        }
+    }
 
     public boolean isWin(Player player){
         if(howManyDebit == 0 && house && armchair && couch && kitchenFurniture && hoover && tv && bed && washingMachine && radio) {
@@ -64,9 +94,6 @@ public class Player {
         return totalWalk;
     }
 
-    public int nextTurn() {
-        return totalWalk++;
-    }
 
 
     public void setTotalWalk(int totalWalk) {

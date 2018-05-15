@@ -7,8 +7,8 @@ import com.company.Player;
 public class GoBack extends Square {
 
     public void stepBack(Player player) {
-        System.out.println("Go back 3 fields.");
         player.setPosition(player.getCurrentPosition() - 3);
+        System.out.println("Go back 3 fields.");
     }
 
 }

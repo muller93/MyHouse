@@ -21,8 +21,9 @@ public class ElectroShop extends Square{
 
 
     public void electroShop(Player player) throws Exception { //ready
-        System.out.println("Electro Shop field" + '\n' + "------- ---- -----");
+        System.out.println(" ------- ---- -----" + '\n' + "|Electro Shop field|" + '\n' + " ------- ---- -----");
         System.out.println("Your money: " + player.getMoney() + '\n' + "Do you want buy any electronic device? Please enter a number. Your money: " + player.getMoney());
+        player.alreadyHaveElectro();
         System.out.println("1. Washing machine. Price: " + washMachPrice);
         System.out.println("2. TV. Price: " + tvPrice);
         System.out.println("3. Hoover. Price: " + hooverPrice);
