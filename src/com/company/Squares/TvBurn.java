@@ -14,11 +14,11 @@ public class TvBurn extends Square { //ready
         System.out.println("TV Burn field" + '\n' + "-- ---- -----");
         if (player.isTv()){
             if (player.isInsure()) {
-                System.out.println("Your tv is burned, but you have insure, so you got back the money.");
+                System.out.println("Your tv is broken, but you have insure, so you got back the money.");
                 player.setTv(false);
                 player.setMoney(player.getMoney() + electroShop.getTvPrice());
             } else {
-                System.out.println("Your tv is burned. Unfortunetly you don't have insure.");
+                System.out.println("Your tv is broken. Unfortunetly you don't have insure.");
                 player.setTv(false);
             }
         } else {

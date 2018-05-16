@@ -17,7 +17,7 @@ public class Lottery extends Square { //ready
         System.out.println("You played a lottery. That was 50Ft.");
         player.setMoney(player.getMoney()- 50);
         luckyCard.luckyCards(player);
-        System.out.println(" Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney());
 
     }
 

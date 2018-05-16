@@ -1,21 +1,11 @@
 package com.company;
 
 import com.company.Board.Board;
-import com.company.Squares.LuckyCard;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class MyHouse {
     private int totalPlayer;
-
-    public MyHouse(int totalPlayer) {
-        Board board = new Board(totalPlayer);
-    }
-
-    public MyHouse() {
-
-    }
 
     public static void main(String[] args) throws Exception {
     MyHouse myHouse = new MyHouse();
@@ -42,7 +32,7 @@ public class MyHouse {
             }
         }
 
-        MyHouse game = new MyHouse(totalPlayer);
+        MyHouse game = new MyHouse();
         game.startGame(totalPlayer);
     }
 
@@ -52,3 +42,4 @@ public class MyHouse {
         board.table(board.move());
         }
     }
+/*problems: a többjátékos mód megoldása. intellij-n kívül futtatni a játékot*/

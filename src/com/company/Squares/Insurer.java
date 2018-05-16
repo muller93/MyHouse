@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Insurer extends Square {
     private int insurePrice = 1000;
-    private boolean insureError;
+    private boolean goOut;
 
     public Insurer() {
     }
@@ -25,27 +25,32 @@ public class Insurer extends Square {
             System.out.println("Do you want insurance? The price is " + insurePrice + "Ft. Please give a number.");
             System.out.println("1. Yes");
             System.out.println("2. No");
-            int scan = 0;
-            Scanner sc = null;
-            do {
-                try {
-                    sc = new Scanner(System.in);
-                    scan = sc.nextInt();
-                    if (scan < 1 && scan > 2) {
-                        System.out.println("Wrong input. Please give 1 or 2.");
-                        insureError = true;
-                    }
-                    selector(scan, player);
-                } catch (InputMismatchException ex) {
-                    System.out.println("Wrong input. Please give 1 or 2.");
-                    insureError = true;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.exit(1);
-                }
-
-            } while (insureError);
+            scanning(player);
         }
+
+    }
+    public void scanning(Player player){
+        int scan;
+        Scanner sc;
+        goOut = false;
+        do {
+            try {
+                sc = new Scanner(System.in);
+                scan = sc.nextInt();
+                if (scan < 1 && scan > 2) {
+                    System.out.println("Wrong input. Please give 1 or 2.");
+                    goOut = true;
+                }
+                selector(scan, player);
+            } catch (InputMismatchException ex) {
+                System.out.println("Wrong input. Please give 1 or 2.");
+                goOut = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+        } while (goOut);
     }
 
     public void selector(int scan, Player player){

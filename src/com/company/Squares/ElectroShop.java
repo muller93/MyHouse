@@ -1,10 +1,8 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
-import javax.swing.border.Border;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -13,15 +11,11 @@ public class ElectroShop extends Square{
     private int tvPrice = 8000;
     private int hooverPrice = 3000;
     private int radioPrice = 500;
-    private boolean electroErr = false;
+    private boolean goOut = false;
     private int scan;
 
-    public ElectroShop() {
-    }
-
-
-    public void electroShop(Player player) throws Exception { //ready
-        System.out.println(" ------- ---- -----" + '\n' + "|Electro Shop field|" + '\n' + " ------- ---- -----");
+    public void electroShop(Player player) { //ready
+        System.out.println("Electro Shop field" + '\n' + "------- ---- -----");
         System.out.println("Your money: " + player.getMoney() + '\n' + "Do you want buy any electronic device? Please enter a number. Your money: " + player.getMoney());
         player.alreadyHaveElectro();
         System.out.println("1. Washing machine. Price: " + washMachPrice);
@@ -29,25 +23,29 @@ public class ElectroShop extends Square{
         System.out.println("3. Hoover. Price: " + hooverPrice);
         System.out.println("4. Radio. Price: " + radioPrice);
         System.out.println("5. No, thanks.");
-        Scanner sc = null;
+        scanning(player);
+    }
 
-            do {
-                try {
-                    sc = new Scanner(System.in);
-                    scan = sc.nextInt();
-                    if (scan < 1 && scan > 5) {
-                        System.out.println("Wrong input. Please give 1 or 2.");
-                        electroErr = true;
-                    }
-                    selector(scan, player);
-                } catch (InputMismatchException ex) {
+    public void scanning(Player player){
+        Scanner sc;
+        do {
+            try {
+                sc = new Scanner(System.in);
+                scan = sc.nextInt();
+                goOut = false;
+                if (scan < 1 && scan > 5) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
-                    electroErr = true;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.exit(1);
+                    goOut = true;
                 }
-            } while (electroErr);
+                selector(scan, player);
+            } catch (InputMismatchException ex) {
+                System.out.println("Wrong input. Please give a number between 1-5.");
+                goOut = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+        } while (goOut);
     }
 
     public void getWashMach(Player player){
@@ -64,7 +62,7 @@ public class ElectroShop extends Square{
         }
     }
 
-    public void getTv(Player player){
+    public void getTv(Player player) throws Exception {
         if (player.getMoney() >= tvPrice) {
             if (!player.isTv()) {
                 player.setTv(true);
@@ -72,6 +70,7 @@ public class ElectroShop extends Square{
                 System.out.println("You bought a new TV. Your money: " + player.getMoney());
             } else {
                 System.out.println("You already have a TV.");
+                //electroShop(player);
             }
         } else {
             System.out.println("You don't have enough money.");

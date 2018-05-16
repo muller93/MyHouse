@@ -7,15 +7,15 @@ public class Player {
     private String name;
 
     private int money = 10000;
-    private boolean house = true;
+    private boolean house = false;
     private boolean insure = false;
-    private boolean armchair = true;
-    private boolean couch = true;
-    private boolean kitchenFurniture = true;
-    private boolean hoover = true;
-    private boolean tv = true;
-    private boolean bed = true;
-    private boolean washingMachine = true;
+    private boolean armchair = false;
+    private boolean couch = false;
+    private boolean kitchenFurniture = false;
+    private boolean hoover = false;
+    private boolean tv = false;
+    private boolean bed = false;
+    private boolean washingMachine = false;
     private boolean radio = false;
 
     private int howManyDebit = 0;
@@ -25,9 +25,18 @@ public class Player {
         this.name = name;
     }
 
+    public void nextTurn() {
+        totalWalk++;
+    }
+
+    public int getTotalWalk() {
+        return totalWalk;
+    }
+
     public Player() {
 
     }
+
     public void alreadyHaveFurniture() {
         System.out.println("You already have: ");
         if (isBed()) {
@@ -88,16 +97,6 @@ public class Player {
 
     public void setInsure(boolean insure) {
         this.insure = insure;
-    }
-
-    public int getTotalWalk() {
-        return totalWalk;
-    }
-
-
-
-    public void setTotalWalk(int totalWalk) {
-        this.totalWalk = totalWalk;
     }
 
     public int getCurrentPosition() {

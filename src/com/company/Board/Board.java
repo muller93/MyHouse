@@ -37,7 +37,7 @@ public class Board {
     int currentTurn = 0;
     int totalPlayer = 0;
     Player[] players;
-    Square[] squares = new Square[20];
+    Square[] squares = new Square[21];
 
     public Board(int totalPlayer) {
         players = new Player[totalPlayer];
@@ -61,12 +61,16 @@ public class Board {
 
             int throwing = dice.throwDice();
             player.setPosition(player.getCurrentPosition() + throwing);
-            if (player.getCurrentPosition() > 19) {
-                player.setPosition(player.getCurrentPosition() - 19);
-                player.setMoney(player.getMoney() + 4000);
-                System.out.println("You go through the start field, and got 4000Ft.");
+            if (player.getCurrentPosition() > 20) {
+                player.setPosition(player.getCurrentPosition() - 20);
+                if (player.getCurrentPosition() == 1) {
+                    player.setMoney(player.getMoney() + 6000);
+                } else if (player.getCurrentPosition() > 1) {
+                    player.setMoney(player.getMoney() + 4000);
+                    System.out.println("You go through the start field, and got 4000Ft.");
+                }
             }
-            System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position.");
+            System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position." + '\n');
             return player.getCurrentPosition();
         }
         return player.getCurrentPosition();
@@ -75,8 +79,8 @@ public class Board {
 
     public void scanning() {
         boolean end = false;
-        int scan = 0;
-        Scanner sc = null;
+        int scan;
+        Scanner sc;
         do {
             try {
                 sc = new Scanner(System.in);
@@ -115,121 +119,102 @@ public class Board {
                 case 1: squares[1] = new Start();
                     start.atStart(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 2: squares[2] = new ChimneySweeper();
                     chimneySweeper.chimneyLuck(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 3: squares[3] = new ElectroShop();
                     electroShop.electroShop(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 4: squares[4] = new GoAhead();
-                    goAhead.goForw(player);
+                    goAhead.goForw(player, littering);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 5: squares[5] = new LuckyCard();
                     luckyCard.luckyCards(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 6: squares[6] = new TvBurn();
                     tvBurn.tvBurn(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 7: squares[7] = new Littering();
                     littering.litter(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 8: squares[8] = new FurnitureShop();
                     furnitureShop.furnitureShop(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 9: squares[9] = new LuckyCard();
                     luckyCard.luckyCards(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 10: squares[10] = new FreeParking();
                     freeParking.freeP();
                     table(move());
-                    nextTurn();
                     break;
 
                 case 11: squares[11] = new RealEstate();
                     realEstate.getHouse(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 12: squares[12] = new GoBack();
-                    goBack.stepBack(player);
+                    goBack.stepBack(player, luckyCard);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 13: squares[13] = new Insurer();
                     insurer.getInsure(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 14: squares[14] = new LuckyCard();
                     luckyCard.luckyCards(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 15: squares[15] = new BrokenWashingMachine();
                     brokenWashingMachine.washMach(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 16: squares[16] = new Littering();
                     littering.litter(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 17: squares[17] = new Lottery();
                     lottery.gambling(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 18: squares[18] = new Bank();
                     bank.takeUpLoan(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 19: squares[19] = new LuckyCard();
                     luckyCard.luckyCards(player);
                     table(move());
-                    nextTurn();
                     break;
 
                 case 20: squares[20] = new Tram();
-                    tram.travel(player);
+                    furnitureShop.furnitureShop(player);
+                    System.out.println("You travelled with tram and you arrived to the furniture shop");
                     table(move());
-                    nextTurn();
                     break;
             }
         }

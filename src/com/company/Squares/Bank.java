@@ -7,43 +7,48 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Bank extends Square {
-    private boolean bankError;
+    private boolean goOut;
     private int maxLoan = 15001;
 
     public Bank() {
     }
 
-    public void takeUpLoan(Player player){ //csak a teljes adósságot lehet visszafizetni. ha annyit akarunk kérni amennyit már nem lehet nem ad másik választási lehetőséget
+    public void takeUpLoan(Player player) {
         int canLoan = maxLoan - player.getHowManyDebit();
         System.out.println("Bank field" + '\n' + "---- -----");
         System.out.println("Your money: " + player.getMoney());
-        System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + canLoan);
+        System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + (canLoan - 1));
         System.out.println("Welcome to our bank. What do you want? Please select a number.");
         System.out.println("1. I want take up 5000");
         System.out.println("2. I want take up 10000");
         System.out.println("3. I want take up 15000");
         System.out.println("4. I want pay back the money.");
         System.out.println("5. Nothing");
-        int scan = 0;
-        Scanner sc = null;
+        scanning(player);
 
+    }
+
+    public void scanning(Player player){
+        Scanner sc;
+        int scan;
         do {
             try {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                if (!(scan < 1 && scan > 5)) {
-                    bankError = true;
+                goOut = false;
+                if (scan < 1 && scan > 5) {
+                    System.out.println("Wrong input. Please give a number between 1-5.");
+                    goOut = true;
                 }
                 selector(scan, player);
             } catch (InputMismatchException ex) {
                 System.out.println("Wrong input. Please give a number between 1-5.");
-                bankError = true;
-            } catch (Exception e){
+                goOut = true;
+            } catch (Exception e) {
                 e.printStackTrace();
-                System.exit(18);
+                System.exit(1);
             }
-
-        } while (bankError);
+        } while (goOut);
     }
 
     public void littleDebit(Player player){
@@ -91,7 +96,7 @@ public class Bank extends Square {
     }
 
     public void selector(int scan, Player player) {
-        bankError = false;
+        goOut = false;
         switch (scan) {
             case 1: littleDebit(player);
                 break;

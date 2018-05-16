@@ -1,6 +1,5 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
 import com.company.Player;
 
@@ -12,13 +11,9 @@ public class FurnitureShop extends Square {
     private int couchPrice = 5000; //kanapé
     private int kitchenFurnitrePrice = 6000;
     private int bedPrice = 4000;
-    private boolean furnitureError = false;
+    private boolean goOut = false;
 
-    public FurnitureShop() {
-    }
-
-
-    public void furnitureShop(Player player) throws Exception { //ready
+    public void furnitureShop(Player player) { //ready
         System.out.println("Furniture Shop field" + '\n' + "--------- ---- -----");
         System.out.println("Your money: " + player.getMoney());
         System.out.println("Do you want buy any furniture? Please enter a number.");
@@ -28,26 +23,29 @@ public class FurnitureShop extends Square {
         System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice);
         System.out.println("4. Bed. Price: " + bedPrice);
         System.out.println("5. No, thanks.");
-            int scan = 0;
-        Scanner sc = null;
+        scanning(player);
+    }
+    public void scanning(Player player){
+        Scanner sc;
+        int scan;
         do {
             try {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                if (scan < 1 && scan > 2) {
-                    System.out.println("Wrong input. Please give 1 or 2.");
-                    furnitureError = true;
+                goOut = false;
+                if (scan < 1 && scan > 5) {
+                    System.out.println("Wrong input. Please give a number between 1-5.");
+                    goOut = true;
                 }
                 selector(scan, player);
             } catch (InputMismatchException ex) {
                 System.out.println("Wrong input. Please give a number between 1-5.");
-                furnitureError = true;
+                goOut = true;
             } catch (Exception e) {
                 e.printStackTrace();
-                System.exit(13);
+                System.exit(1);
             }
-
-        } while (furnitureError);
+        } while (goOut);
     }
 
     public void getArmchair(Player player){

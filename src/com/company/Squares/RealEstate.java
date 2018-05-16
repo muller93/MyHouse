@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class RealEstate extends Square { //ready
     private int housePrice = 50000;
-    private boolean houseError;
+    private boolean goOut;
 
     public RealEstate() {
     }
 
-    public void getHouse(Player player) throws Exception {
+    public void getHouse(Player player) {
         System.out.println("Real Estate field" + '\n' + "---- ------ -----");
         System.out.println("Your money: " + player.getMoney());
         if (player.isHouse()) {
@@ -25,30 +25,35 @@ public class RealEstate extends Square { //ready
             System.out.println("Do you want buy a house? The price is " + housePrice + "Ft. Please give a number.");
             System.out.println("1. Yes");
             System.out.println("2. No");
-            int scan = 0;
-            Scanner sc = null;
-            do {
-                try {
-                    sc = new Scanner(System.in);
-                    scan = sc.nextInt();
-                    if (scan < 1 && scan > 2) {
-                        System.out.println("Wrong input. Please give 1 or 2.");
-                        houseError = true;
-                    }
-                    sw(scan, player);
-                } catch (InputMismatchException ex) {
-                    System.out.println("Wrong input. Please give a number between 1-5.");
-                    houseError = true;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.exit(1);
-                }
-
-            } while (houseError);
-            sc.close();
+            scanning(player);
         }
     }
-    public void sw(int scan, Player player){
+
+    public void scanning(Player player) {
+        int scan;
+        Scanner sc;
+        goOut = false;
+        do {
+            try {
+                sc = new Scanner(System.in);
+                scan = sc.nextInt();
+                if (scan < 1 && scan > 2) {
+                    System.out.println("Wrong input. Please give 1 or 2.");
+                    goOut = true;
+                }
+                selector(scan, player);
+            } catch (InputMismatchException ex) {
+                System.out.println("Wrong input. Please give 1 or 2.");
+                goOut = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+        } while (goOut);
+    }
+
+    public void selector(int scan, Player player){
         switch (scan) {
             case 1:
                 player.setHouse(true);
