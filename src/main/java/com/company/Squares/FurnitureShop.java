@@ -1,7 +1,7 @@
 package com.company.Squares;
 
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -13,9 +13,12 @@ public class FurnitureShop extends Square {
     private int bedPrice = 4000;
     private boolean goOut = false;
 
-    public void furnitureShop(Player player) { //ready
+    public void furnitureShop(Player player) {
+        if (player.hasHouse()) {
+
+        //ready
         System.out.println("Furniture Shop field" + '\n' + "--------- ---- -----");
-        System.out.println("Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney() + "Ft");
         System.out.println("Do you want buy any furniture? Please enter a number.");
         player.alreadyHaveFurniture();
         System.out.println("1. Armchair. Price: " + armchairPrice);
@@ -24,6 +27,7 @@ public class FurnitureShop extends Square {
         System.out.println("4. Bed. Price: " + bedPrice);
         System.out.println("5. No, thanks.");
         scanning(player);
+        }else System.out.println("You can't buy any furniture, until you don't have house.");
     }
     public void scanning(Player player){
         Scanner sc;
@@ -33,7 +37,7 @@ public class FurnitureShop extends Square {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
                 goOut = false;
-                if (scan < 1 && scan > 5) {
+                if (scan < 1 || scan > 5) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     goOut = true;
                 }

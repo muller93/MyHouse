@@ -3,10 +3,7 @@ package com.company.Board;
 import com.company.Devices.Dice;
 import com.company.MyHouse;
 import com.company.Squares.*;
-import com.company.Player;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.company.Player.Player;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -29,12 +26,8 @@ public class Board {
     Start start = new Start();
     TvBurn tvBurn = new TvBurn();
     GoAhead goAhead = new GoAhead();
+    Holiday holiday = new Holiday();
 
-    /*public Board() {
-
-    }*/
-
-    int currentTurn = 0;
     int totalPlayer = 0;
     Player[] players;
     Square[] squares = new Square[21];
@@ -53,9 +46,9 @@ public class Board {
             "What do you want?" + '\n' +
                     "1. I want play again" + '\n' +
                     "2. Exit" );
-            scanning();
+            scanning(player);
         } else {
-            System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + ". If you want throw with dice, please press any button and press enter.");
+            System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + "Ft. If you want throw with dice, please press any button and press enter.");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
 
@@ -70,14 +63,14 @@ public class Board {
                     System.out.println("You go through the start field, and got 4000Ft.");
                 }
             }
-            System.out.println("Your throwing is " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position." + '\n');
+            System.out.println("You thrown " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position." + '\n');
             return player.getCurrentPosition();
         }
         return player.getCurrentPosition();
     }
 
 
-    public void scanning() {
+    public void scanning(Player player) {
         boolean end = false;
         int scan;
         Scanner sc;
@@ -89,7 +82,7 @@ public class Board {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     end = true;
                 }
-                selector(scan, player);
+                selector(scan);
             } catch (InputMismatchException ex) {
                 System.out.println("Wrong input. Please give 1 or 2.");
                 end = true;
@@ -101,7 +94,7 @@ public class Board {
         } while (end);
     }
 
-    public void selector(int scan, Player player) throws Exception {
+    public void selector(int scan) throws Exception {
         switch (scan) {
             case 1:
                 MyHouse myHouse = new MyHouse();
@@ -112,13 +105,11 @@ public class Board {
         }
     }
 
-
-
     public void table(int i) throws Exception {
             switch (i){
                 case 1: squares[1] = new Start();
                     start.atStart(player);
-                    table(move());
+                    table(move(/*player*/)/*, players*/);
                     break;
 
                 case 2: squares[2] = new ChimneySweeper();
@@ -156,8 +147,8 @@ public class Board {
                     table(move());
                     break;
 
-                case 9: squares[9] = new LuckyCard();
-                    luckyCard.luckyCards(player);
+                case 9: squares[9] = new Holiday();
+                    holiday.goHoliday(player);
                     table(move());
                     break;
 
@@ -212,28 +203,9 @@ public class Board {
                     break;
 
                 case 20: squares[20] = new Tram();
-                    furnitureShop.furnitureShop(player);
-                    System.out.println("You travelled with tram and you arrived to the furniture shop");
+                    tram.travel(player, furnitureShop);
                     table(move());
                     break;
             }
-        }
-
-    public Player getCurrentPlayer() {
-        return players[currentTurn];
-    }
-
-    public Player[] getPlayers() {
-        return players;
-    }
-
-    public void nextTurn() {
-        if(++currentTurn >= players.length){
-            currentTurn = 0;
-        }
-    }
-
-    public Player getPlayer(int id) {
-        return players[id];
     }
 }

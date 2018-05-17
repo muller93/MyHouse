@@ -1,7 +1,7 @@
 package com.company.Squares;
 
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 public class GoAhead extends Square{
     public void goForw(Player player, Littering littering){

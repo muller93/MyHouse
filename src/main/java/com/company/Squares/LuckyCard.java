@@ -1,8 +1,7 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 import java.util.*;
 
@@ -20,17 +19,17 @@ public class LuckyCard extends Square { //ok
         System.out.println("Lucky Card field" + '\n' + "----- ---- -----" + '\n' + "You pick a lucky card: ");
 
         //decrase
-        badCards.put("You bought a new shoes. Decrease your money with 50Ft.", 50);
-        badCards.put("You were driving too fast and got a penalty. Decrase your money with 300Ft.", 300);
-        badCards.put("You had to be repaire your car. Decrase your money with 500Ft.", 500);
-        badCards.put("You have to bought a new suit. Decrase your money with 200Ft.", 200);
-        badCards.put("You were at the dentist. The treatment price was 100Ft.", 100);
+        badCards.put("You bought a new shoes. Decrease your money with 700Ft.", 700);
+        badCards.put("You were driving too fast and got a penalty. Decrase your money with 1800Ft.", 1800);
+        badCards.put("You had to be repaire your car. Decrase your money with 1000Ft.", 1000);
+        badCards.put("You have to bought a new suit. Decrase your money with 1500Ft.", 1500);
+        badCards.put("You were at the dentist. The treatment price was 2000Ft.", 2000);
         //increase
-        goodCards.put("You won on tippmix. You got 120Ft", 120);
-        goodCards.put("Happy birthday! You got 50ft from your grandmother.", 50);
-        goodCards.put("You got a premium from your boss. Your money increase with 500Ft.", 500);
-        goodCards.put("Inherited a little money. You got 180ft", 180);
-        goodCards.put("You won on the lottery. You got 260Ft.", 260);
+        goodCards.put("You won on tippmix. You got 700Ft", 700);
+        goodCards.put("Happy birthday! You got 500Ft from your grandmother.", 500);
+        goodCards.put("You got a premium from your boss. Your money increase with 1200Ft.", 1200);
+        goodCards.put("Inherited a little money. You got 1800Ft", 1800);
+        goodCards.put("You won on the lottery. You got 2000Ft.", 2000);
         //10 luckycard ready
         if (selector() == 1){
             goodSelector(player);

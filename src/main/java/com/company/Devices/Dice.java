@@ -7,6 +7,6 @@ public class Dice { //ok
 
     public int throwDice(){
         int num = rand.nextInt(6) + 1;
-    return num;
+        return num;
     }
 }

@@ -1,7 +1,7 @@
 package com.company.Squares;
 
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -18,7 +18,7 @@ public class Bank extends Square {
         System.out.println("Bank field" + '\n' + "---- -----");
         System.out.println("Your money: " + player.getMoney());
         System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + (canLoan - 1));
-        System.out.println("Welcome to our bank. What do you want? Please select a number.");
+        System.out.println("Welcome to our bank. What would you like? Please select a number. You have to pay back the 120% of amount");
         System.out.println("1. I want take up 5000");
         System.out.println("2. I want take up 10000");
         System.out.println("3. I want take up 15000");
@@ -36,7 +36,7 @@ public class Bank extends Square {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
                 goOut = false;
-                if (scan < 1 && scan > 5) {
+                if (scan < 1 || scan > 5) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     goOut = true;
                 }
@@ -87,7 +87,7 @@ public class Bank extends Square {
     public void refound(Player player){
         if (player.getHowManyDebit() < player.getMoney()) {
             System.out.println("You pay back your debit");
-            player.setMoney(player.getMoney() - player.getHowManyDebit());
+            player.setMoney(player.getMoney() - (player.getHowManyDebit() + player.getHowManyDebit() / 5));
             player.setHowManyDebit(0);
             System.out.println("Your money " + player.getMoney());
         } else {

@@ -1,12 +1,11 @@
-package com.company;
+package com.company.Player;
 
 public class Player {
-    private int totalWalk = 0;
     private int position = 1;
     private int id;
     private String name;
 
-    private int money = 10000;
+    private int money = 20000;
     private boolean house = false;
     private boolean insure = false;
     private boolean armchair = false;
@@ -24,17 +23,14 @@ public class Player {
         this.id = id;
         this.name = name;
     }
-
-    public void nextTurn() {
-        totalWalk++;
-    }
-
-    public int getTotalWalk() {
-        return totalWalk;
-    }
-
     public Player() {
 
+    }
+
+    public boolean hasHouse(){
+        if (isHouse()) {
+            return true;
+        }else return false;
     }
 
     public void alreadyHaveFurniture() {
@@ -107,21 +103,6 @@ public class Player {
         this.position = position;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public boolean isArmchair() {
         return armchair;

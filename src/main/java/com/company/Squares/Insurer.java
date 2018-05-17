@@ -1,7 +1,7 @@
 package com.company.Squares;
 
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class Insurer extends Square {
 
     public void getInsure(Player player) throws Exception { //ready
         System.out.println("Insurer field" + '\n' + "------- -----");
-        System.out.println("Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney() + "Ft");
 
         if (player.isInsure()) {
             System.out.println("You already have insure.");
@@ -37,7 +37,7 @@ public class Insurer extends Square {
             try {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                if (scan < 1 && scan > 2) {
+                if (scan < 1 || scan > 2) {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     goOut = true;
                 }

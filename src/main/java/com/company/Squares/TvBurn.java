@@ -1,8 +1,8 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
+
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 public class TvBurn extends Square { //ready
     ElectroShop electroShop = new ElectroShop();

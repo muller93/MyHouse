@@ -1,8 +1,7 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 public class BrokenWashingMachine extends Square { //ready
     ElectroShop electroShop = new ElectroShop();
@@ -12,7 +11,7 @@ public class BrokenWashingMachine extends Square { //ready
 
     public void washMach(Player player){
         System.out.println("Broken Washing Machine field" + '\n' + "------ ------- ------- -----");
-        System.out.println("Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney() + "Ft");
 
         if (player.isWashingMachine()){
             if (player.isInsure()){

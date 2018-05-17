@@ -1,8 +1,7 @@
 package com.company.Squares;
 
-import com.company.Board.Board;
 import com.company.Board.Square;
-import com.company.Player;
+import com.company.Player.Player;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -16,7 +15,7 @@ public class RealEstate extends Square { //ready
 
     public void getHouse(Player player) {
         System.out.println("Real Estate field" + '\n' + "---- ------ -----");
-        System.out.println("Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney() + "Ft");
         if (player.isHouse()) {
             System.out.println("You already have house.");
         } else if (player.getMoney() < housePrice) {
@@ -37,7 +36,7 @@ public class RealEstate extends Square { //ready
             try {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                if (scan < 1 && scan > 2) {
+                if (scan < 1 || scan > 2) {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     goOut = true;
                 }
