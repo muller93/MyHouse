@@ -12,9 +12,9 @@ public class MyHouse {
 
     myHouse.playing();
     }
-    public void playing() throws Exception {
 
-        System.out.println("\tMy House\n");
+    public void playing() throws Exception {
+        System.out.println("    ======= == == ===== ====" +'\n' + '\t'+ "Welcome to My House Game  " +'\n' + "    ======= == == ===== ====" +'\n');
         Scanner scanner = new Scanner(System.in);
         int totalPlayer = 0;
         while (totalPlayer < 2 || totalPlayer > 8) {
