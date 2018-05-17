@@ -13,18 +13,18 @@ public class MyHouse {
     public void playing() throws Exception {
         System.out.println("======= == == ===== ====" +'\n' + "Welcome to My House Game  " +'\n' + "======= == == ===== ====" +'\n');
         Scanner scanner = new Scanner(System.in);
-        int totalPlayer = 0;
+        int totalPlayer = 3;
         while (totalPlayer < 2 || totalPlayer > 6) {
             try {
-                System.out.println("How many people are playing?");
-                System.out.print("Players (2 - 6): ");
-                totalPlayer = scanner.nextInt();
+                //System.out.println("How many people are playing?");
+                //System.out.print("Players (2 - 6): ");
+                //totalPlayer = scanner.nextInt();
             }
             catch(Exception e) {
                 System.err.println("Error: Number too large.");
                 continue;
             }
-            if(totalPlayer > 8) {
+            if(totalPlayer > 6) {
                 System.err.println("Error: Invalid player count.");
             }
         }

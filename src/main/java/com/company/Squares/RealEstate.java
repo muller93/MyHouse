@@ -14,7 +14,7 @@ public class RealEstate extends Square { //ready
     }
 
     public void getHouse(Player player) {
-        System.out.println("Real Estate field" + '\n' + "---- ------ -----");
+        System.out.println("Buy House field" + '\n' + "--- ----- -----");
         System.out.println("Your money: " + player.getMoney() + "Ft");
         if (player.isHouse()) {
             System.out.println("You already have house.");
