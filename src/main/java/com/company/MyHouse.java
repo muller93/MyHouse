@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.Board.Board;
+import com.company.Player.Player;
 
 import java.util.Scanner;
 
@@ -10,7 +11,7 @@ public class MyHouse {
         myHouse.playing();
     }
 
-    public void playing() throws Exception {
+    public void playing(Player[] players) throws Exception {
         System.out.println("======= == == ===== ====" +'\n' + "Welcome to My House Game  " +'\n' + "======= == == ===== ====" +'\n');
         Scanner scanner = new Scanner(System.in);
         int totalPlayer = 3;
@@ -29,12 +30,12 @@ public class MyHouse {
             }
         }
         MyHouse game = new MyHouse();
-        game.startGame(totalPlayer);
+        game.startGame(totalPlayer, players);
     }
 
-    public void startGame(int totalPlayer) throws Exception {
+    public void startGame(int totalPlayer, Player[] players) throws Exception {
         Board board = new Board(totalPlayer);
-        board.table(board.move());
+        board.table(board.move(players), players);
         }
     }
 /*problems: a többjátékos mód megoldása.*/

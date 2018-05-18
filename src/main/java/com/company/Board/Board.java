@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Board {
-    Player player = new Player();
+    //Player player = new Player();
     Dice dice = new Dice();
     ChimneySweeper chimneySweeper = new ChimneySweeper();
     ElectroShop electroShop = new ElectroShop();
@@ -28,6 +28,7 @@ public class Board {
     GoAhead goAhead = new GoAhead();
     Holiday holiday = new Holiday();
 
+    int i = 0;
     int totalPlayer = 0;
     Player[] players;
     Square[] squares = new Square[21];
@@ -40,33 +41,33 @@ public class Board {
         }
     }
 
-    public int move() {
-        if (player.isWin(player)) {
+    public int move(Player[] players) {
+        if (players[i].isWin(players[i])) {
             System.out.println("Congratulations, you won!" + '\n' +
             "What do you want?" + '\n' +
                     "1. I want play again" + '\n' +
                     "2. Exit" );
-            scanning(player);
+            scanning(players[i]);
         } else {
-            System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + "Ft. If you want throw with dice, please press any button and press enter.");
+            System.out.println("Your turn. Current position is " + players[i].getCurrentPosition() + ". Your money: " + players[i].getMoney() + "Ft. If you want throw with dice, please press any button and press enter.");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
 
             int throwing = dice.throwDice();
-            player.setPosition(player.getCurrentPosition() + throwing);
-            if (player.getCurrentPosition() > 20) {
-                player.setPosition(player.getCurrentPosition() - 20);
-                if (player.getCurrentPosition() == 1) {
-                    player.setMoney(player.getMoney() + 6000);
-                } else if (player.getCurrentPosition() > 1) {
-                    player.setMoney(player.getMoney() + 4000);
+            players[i].setPosition(players[i].getCurrentPosition() + throwing);
+            if (players[i].getCurrentPosition() > 20) {
+                players[i].setPosition(players[i].getCurrentPosition() - 20);
+                if (players[i].getCurrentPosition() == 1) {
+                    players[i].setMoney(players[i].getMoney() + 6000);
+                } else if (players[i].getCurrentPosition() > 1) {
+                    players[i].setMoney(players[i].getMoney() + 4000);
                     System.out.println("You go through the start field, and got 4000Ft.");
                 }
             }
-            System.out.println("You thrown " + throwing + " and you arrived, the " + player.getCurrentPosition() + ". position." + '\n');
-            return player.getCurrentPosition();
+            System.out.println("You thrown " + throwing + " and you arrived, the " + players[i].getCurrentPosition() + ". position." + '\n');
+            return players[i].getCurrentPosition();
         }
-        return player.getCurrentPosition();
+        return players[i].getCurrentPosition();
     }
 
 
@@ -105,106 +106,106 @@ public class Board {
         }
     }
 
-    public void table(int i) throws Exception {
+    public void table(int i, Player[] players) throws Exception {
             switch (i){
                 case 1: squares[1] = new Start();
-                    start.atStart(player);
-                    table(move(/*player*/)/*, players*/);
+                    start.atStart(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 2: squares[2] = new ChimneySweeper();
-                    chimneySweeper.chimneyLuck(player);
-                    table(move());
+                    chimneySweeper.chimneyLuck(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 3: squares[3] = new ElectroShop();
-                    electroShop.electroShop(player);
-                    table(move());
+                    electroShop.electroShop(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 4: squares[4] = new GoAhead();
-                    goAhead.goForw(player, littering);
-                    table(move());
+                    goAhead.goForw(players[i], littering);
+                    table(move(players), players);
                     break;
 
                 case 5: squares[5] = new LuckyCard();
-                    luckyCard.luckyCards(player);
-                    table(move());
+                    luckyCard.luckyCards(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 6: squares[6] = new TvBurn();
-                    tvBurn.tvBurn(player);
-                    table(move());
+                    tvBurn.tvBurn(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 7: squares[7] = new Littering();
-                    littering.litter(player);
-                    table(move());
+                    littering.litter(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 8: squares[8] = new FurnitureShop();
-                    furnitureShop.furnitureShop(player);
-                    table(move());
+                    furnitureShop.furnitureShop(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 9: squares[9] = new Holiday();
-                    holiday.goHoliday(player);
-                    table(move());
+                    holiday.goHoliday(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 10: squares[10] = new FreeParking();
                     freeParking.freeP();
-                    table(move());
+                    table(move(players), players);
                     break;
 
                 case 11: squares[11] = new RealEstate();
-                    realEstate.getHouse(player);
-                    table(move());
+                    realEstate.getHouse(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 12: squares[12] = new GoBack();
-                    goBack.stepBack(player, luckyCard);
-                    table(move());
+                    goBack.stepBack(players[i], luckyCard);
+                    table(move(players), players);
                     break;
 
                 case 13: squares[13] = new Insurer();
-                    insurer.getInsure(player);
-                    table(move());
+                    insurer.getInsure(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 14: squares[14] = new LuckyCard();
-                    luckyCard.luckyCards(player);
-                    table(move());
+                    luckyCard.luckyCards(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 15: squares[15] = new BrokenWashingMachine();
-                    brokenWashingMachine.washMach(player);
-                    table(move());
+                    brokenWashingMachine.washMach(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 16: squares[16] = new Littering();
-                    littering.litter(player);
-                    table(move());
+                    littering.litter(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 17: squares[17] = new Lottery();
-                    lottery.gambling(player);
-                    table(move());
+                    lottery.gambling(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 18: squares[18] = new Bank();
-                    bank.takeUpLoan(player);
-                    table(move());
+                    bank.takeUpLoan(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 19: squares[19] = new LuckyCard();
-                    luckyCard.luckyCards(player);
-                    table(move());
+                    luckyCard.luckyCards(players[i]);
+                    table(move(players), players);
                     break;
 
                 case 20: squares[20] = new Tram();
-                    tram.travel(player, furnitureShop);
-                    table(move());
+                    tram.travel(players[i], furnitureShop);
+                    table(move(players), players);
                     break;
             }
     }
