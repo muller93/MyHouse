@@ -37,4 +37,4 @@ public class MyHouse {
         board.table(board.move());
         }
     }
-/*problems: a többjátékos mód megoldása.*/
+/*problems: a többjátékos mód megoldása. cuccli*/
