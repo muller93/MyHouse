@@ -32,11 +32,11 @@ public class Insurer extends Square {
     public void scanning(Player player){
         int scan;
         Scanner sc;
-        goOut = false;
         do {
             try {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
+                goOut = false;
                 if (scan < 1 || scan > 2) {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     goOut = true;

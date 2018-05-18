@@ -56,7 +56,6 @@ public class Bank extends Square {
             System.out.println("You get 5000Ft");
             player.setMoney(player.getMoney() + 5000);
             player.setHowManyDebit(player.getHowManyDebit() + 5000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
@@ -67,7 +66,6 @@ public class Bank extends Square {
             System.out.println("You get 10000Ft");
             player.setMoney(player.getMoney() + 10000);
             player.setHowManyDebit(player.getHowManyDebit() + 10000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
@@ -78,7 +76,6 @@ public class Bank extends Square {
             System.out.println("You get 15000Ft");
             player.setMoney(player.getMoney() + 15000);
             player.setHowManyDebit(player.getHowManyDebit() + 15000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
