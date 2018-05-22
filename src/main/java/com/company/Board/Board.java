@@ -27,7 +27,7 @@ public class Board {
     private TvBurn tvBurn = new TvBurn();
     private GoAhead goAhead = new GoAhead();
     private Holiday holiday = new Holiday();
-
+    
     private int totalPlayer = 0;
     private Player[] players;
     private Square[] squares = new Square[21];
@@ -48,7 +48,7 @@ public class Board {
                     "2. Exit" );
             scanning(player);
         } else {
-            System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + "Ft. If you want throw with dice, please press any button and press enter.");
+            System.out.println("Your turn. Current position is " + player.getCurrentPosition() + ". Your money: " + player.getMoney() + "Ft. If you want throw with dice, please press enter.");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
 
