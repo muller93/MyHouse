@@ -14,7 +14,7 @@ public class MyHouse {
         System.out.println("======= == == ===== ====" +'\n' + "Welcome to My House Game  " +'\n' + "======= == == ===== ====" +'\n');
         Scanner scanner = new Scanner(System.in);
         int totalPlayer = 3;
-        while (totalPlayer < 2 || totalPlayer > 6) {
+        /*while (totalPlayer < 2 || totalPlayer > 6) {
             try {
                 //System.out.println("How many people are playing?");
                 //System.out.print("Players (2 - 6): ");
@@ -27,7 +27,7 @@ public class MyHouse {
             if(totalPlayer > 6) {
                 System.err.println("Error: Invalid player count.");
             }
-        }
+        }*/
         MyHouse game = new MyHouse();
         game.startGame(totalPlayer);
     }

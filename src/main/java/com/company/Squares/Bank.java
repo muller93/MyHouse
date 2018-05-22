@@ -10,9 +10,6 @@ public class Bank extends Square {
     private boolean goOut;
     private int maxLoan = 15001;
 
-    public Bank() {
-    }
-
     public void takeUpLoan(Player player) {
         int canLoan = maxLoan - player.getHowManyDebit();
         System.out.println("Bank field" + '\n' + "---- -----");

@@ -99,8 +99,9 @@ public class Player {
         return position;
     }
 
-    public void setPosition(int position) {
+    public int setPosition(int position) {
         this.position = position;
+        return position;
     }
 
 
