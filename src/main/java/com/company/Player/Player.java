@@ -27,7 +27,6 @@ public class Player {
 
     }
 
-
     public boolean hasHouse(){
         if (isHouse()) {
             return true;
