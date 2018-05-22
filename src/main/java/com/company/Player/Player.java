@@ -177,12 +177,9 @@ public class Player {
     public void setHowManyDebit(int howManyDebit) {
         this.howManyDebit = howManyDebit;
     }
-<<<<<<< HEAD
 
     @Override
     public String toString() {
         return " " + name;
     }
-=======
->>>>>>> master
 }
