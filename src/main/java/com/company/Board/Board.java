@@ -57,7 +57,7 @@ public class Board {
             System.out.println("Your turn. Current position is " + players[i].getCurrentPosition() + ". Your money: " + players[i].getMoney() + "Ft. If you want throw with dice, please press any button and press enter.");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
-
+            
             int throwing = dice.throwDice();
             players[i].setPosition(players[i].getCurrentPosition() + throwing);
             if (players[i].getCurrentPosition() > 20) {
