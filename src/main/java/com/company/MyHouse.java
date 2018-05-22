@@ -1,7 +1,6 @@
 package com.company;
 
 import com.company.Board.Board;
-import com.company.Player.Player;
 
 import java.util.Scanner;
 
@@ -11,15 +10,15 @@ public class MyHouse {
         myHouse.playing();
     }
 
-    public void playing(Player[] players) throws Exception {
+    public void playing() throws Exception {
         System.out.println("======= == == ===== ====" +'\n' + "Welcome to My House Game  " +'\n' + "======= == == ===== ====" +'\n');
         Scanner scanner = new Scanner(System.in);
-        int totalPlayer = 3;
+        int totalPlayer = 0;
         while (totalPlayer < 2 || totalPlayer > 6) {
             try {
-                //System.out.println("How many people are playing?");
-                //System.out.print("Players (2 - 6): ");
-                //totalPlayer = scanner.nextInt();
+                System.out.println("How many people are playing?");
+                System.out.print("Players (2 - 6): ");
+                totalPlayer = scanner.nextInt();
             }
             catch(Exception e) {
                 System.err.println("Error: Number too large.");
@@ -30,12 +29,11 @@ public class MyHouse {
             }
         }
         MyHouse game = new MyHouse();
-        game.startGame(totalPlayer, players);
+        game.startGame(totalPlayer);
     }
 
-    public void startGame(int totalPlayer, Player[] players) throws Exception {
+    private void startGame(int totalPlayer) throws Exception {
         Board board = new Board(totalPlayer);
-        board.table(board.move(players), players);
+        board.table(board.move(board.getPlayers()), board.getPlayers());
         }
     }
-/*problems: a többjátékos mód megoldása.*/

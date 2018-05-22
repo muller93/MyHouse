@@ -30,6 +30,11 @@ public class Board {
 
     int i = 0;
     int totalPlayer = 0;
+
+    public Player[] getPlayers() {
+        return players;
+    }
+
     Player[] players;
     Square[] squares = new Square[21];
 
