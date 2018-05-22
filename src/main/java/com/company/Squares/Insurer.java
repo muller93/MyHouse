@@ -31,9 +31,9 @@ public class Insurer extends Square {
         Scanner sc;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                goOut = false;
                 if (scan < 1 || scan > 2) {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     goOut = true;
@@ -61,4 +61,5 @@ public class Insurer extends Square {
                 break;
         }
     }
+
 }

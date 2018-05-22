@@ -31,9 +31,9 @@ public class ElectroShop extends Square{
         Scanner sc;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 int scan = sc.nextInt();
-                goOut = false;
                 if (scan < 1 || scan > 5) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     goOut = true;

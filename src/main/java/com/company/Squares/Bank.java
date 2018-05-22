@@ -25,13 +25,13 @@ public class Bank extends Square {
     }
 
     private void scanning(Player player){
-        Scanner sc;
         int scan;
+        Scanner sc;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                goOut = false;
                 if (scan < 1 || scan > 5) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     goOut = true;
@@ -89,7 +89,6 @@ public class Bank extends Square {
     }
 
     private void selector(int scan, Player player) {
-        goOut = false;
         switch (scan) {
             case 1: littleDebit(player);
                 break;

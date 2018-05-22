@@ -33,9 +33,9 @@ public class FurnitureShop extends Square {
         int scan;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                goOut = false;
                 if (scan < 1 || scan > 5) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     goOut = true;

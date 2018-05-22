@@ -7,6 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RealEstate extends Square {
+    private boolean goOut;
     private int housePrice = 50000;
 
     public void getHouse(Player player) {
@@ -27,9 +28,9 @@ public class RealEstate extends Square {
     private void scanning(Player player) {
         int scan;
         Scanner sc;
-        boolean goOut = false;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
                 if (scan < 1 || scan > 2) {
