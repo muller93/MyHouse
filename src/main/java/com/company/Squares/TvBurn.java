@@ -4,11 +4,8 @@ package com.company.Squares;
 import com.company.Board.Square;
 import com.company.Player.Player;
 
-public class TvBurn extends Square { //ready
-    ElectroShop electroShop = new ElectroShop();
-
-    public TvBurn() {
-    }
+public class TvBurn extends Square {
+    private ElectroShop electroShop = new ElectroShop();
 
     public void tvBurn(Player player){
         System.out.println("TV Burn field" + '\n' + "-- ---- -----");
@@ -26,4 +23,3 @@ public class TvBurn extends Square { //ready
         }
     }
 }
-/*- Kigyulladt a tévéd (ha volt). Ha van biztosításod, visszakapod az árát.*/

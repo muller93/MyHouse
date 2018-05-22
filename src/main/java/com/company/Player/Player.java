@@ -175,5 +175,4 @@ public class Player {
     public void setHowManyDebit(int howManyDebit) {
         this.howManyDebit = howManyDebit;
     }
-
 }

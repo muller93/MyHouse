@@ -4,15 +4,11 @@ import com.company.Board.Square;
 import com.company.Player.Player;
 
 public class ChimneySweeper extends Square {
-    LuckyCard luckyCard = new LuckyCard();
+    private LuckyCard luckyCard = new LuckyCard();
 
-    public ChimneySweeper() {
-    }
-
-    public void chimneyLuck(Player player){ //ready
+    public void chimneyLuck(Player player){
         System.out.println("Chimney Sweeper field" + '\n' + "------- ------- -----");
-        System.out.println("You saw a chimney sweeper! Pull a luckycard.");
+        System.out.println("You saw a chimney sweeper! Pull a lucky card.");
         luckyCard.luckyCards(player);
     }
 }
-/*- Kéményseprőt láttál, húzz szerencsekártyát!*/

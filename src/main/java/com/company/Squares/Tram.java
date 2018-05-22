@@ -12,4 +12,3 @@ public class Tram extends Square {
         furnitureShop.furnitureShop(player);
     }
 }
-/*- Villamossal utazol, még egyszer dobhatsz.*/

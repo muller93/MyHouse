@@ -25,10 +25,9 @@ public class Bank extends Square {
         System.out.println("4. I want pay back the money.");
         System.out.println("5. Nothing");
         scanning(player);
-
     }
 
-    public void scanning(Player player){
+    private void scanning(Player player){
         Scanner sc;
         int scan;
         do {
@@ -51,7 +50,7 @@ public class Bank extends Square {
         } while (goOut);
     }
 
-    public void littleDebit(Player player){
+    private void littleDebit(Player player){
         if (player.getHowManyDebit() + 5000 < maxLoan) {
             System.out.println("You get 5000Ft");
             player.setMoney(player.getMoney() + 5000);
@@ -61,7 +60,7 @@ public class Bank extends Square {
         }
     }
 
-    public void mediumDebit(Player player){
+    private void mediumDebit(Player player){
         if (player.getHowManyDebit() + 10000 < maxLoan) {
             System.out.println("You get 10000Ft");
             player.setMoney(player.getMoney() + 10000);
@@ -71,7 +70,7 @@ public class Bank extends Square {
         }
     }
 
-    public void bigDebit(Player player){
+    private void bigDebit(Player player){
         if (player.getHowManyDebit() + 15000 < maxLoan) {
             System.out.println("You get 15000Ft");
             player.setMoney(player.getMoney() + 15000);
@@ -81,7 +80,7 @@ public class Bank extends Square {
         }
     }
 
-    public void refound(Player player){
+    private void refound(Player player){
         if (player.getHowManyDebit() < player.getMoney()) {
             System.out.println("You pay back your debit");
             player.setMoney(player.getMoney() - (player.getHowManyDebit() + player.getHowManyDebit() / 5));
@@ -92,7 +91,7 @@ public class Bank extends Square {
         }
     }
 
-    public void selector(int scan, Player player) {
+    private void selector(int scan, Player player) {
         goOut = false;
         switch (scan) {
             case 1: littleDebit(player);
@@ -110,4 +109,3 @@ public class Bank extends Square {
     }
 }
 
-/*OTP. Itt vehetsz fel hitelt, vagy törlesztheted a meglévő tartozásodat.*/

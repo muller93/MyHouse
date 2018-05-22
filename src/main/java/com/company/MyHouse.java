@@ -32,9 +32,8 @@ public class MyHouse {
         game.startGame(totalPlayer);
     }
 
-    public void startGame(int totalPlayer) throws Exception {
+    private void startGame(int totalPlayer) throws Exception {
         Board board = new Board(totalPlayer);
         board.table(board.move());
         }
     }
-/*problems: a többjátékos mód megoldása. cuccli*/

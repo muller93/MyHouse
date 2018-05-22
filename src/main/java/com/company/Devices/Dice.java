@@ -2,7 +2,7 @@ package com.company.Devices;
 
 import java.util.Random;
 
-public class Dice { //ok
+public class Dice {
     Random rand = new Random();
 
     public int throwDice(){

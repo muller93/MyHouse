@@ -3,8 +3,8 @@ package com.company.Squares;
 import com.company.Board.Square;
 import com.company.Player.Player;
 
-public class BrokenWashingMachine extends Square { //ready
-    ElectroShop electroShop = new ElectroShop();
+public class BrokenWashingMachine extends Square {
+    private ElectroShop electroShop = new ElectroShop();
 
     public BrokenWashingMachine() {
     }
@@ -27,4 +27,3 @@ public class BrokenWashingMachine extends Square { //ready
         }
     }
 }
-/*- Elromlott a mosógéped (ha volt). Ha van biztosításod, visszakapod az árát*/
