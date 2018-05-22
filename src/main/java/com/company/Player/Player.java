@@ -27,6 +27,7 @@ public class Player {
 
     }
 
+
     public boolean hasHouse(){
         if (isHouse()) {
             return true;
@@ -176,4 +177,8 @@ public class Player {
         this.howManyDebit = howManyDebit;
     }
 
+    @Override
+    public String toString() {
+        return " " + name;
+    }
 }
