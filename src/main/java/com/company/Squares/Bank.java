@@ -10,9 +10,6 @@ public class Bank extends Square {
     private boolean goOut;
     private int maxLoan = 15001;
 
-    public Bank() {
-    }
-
     public void takeUpLoan(Player player) {
         int canLoan = maxLoan - player.getHowManyDebit();
         System.out.println("Bank field" + '\n' + "---- -----");
@@ -25,17 +22,16 @@ public class Bank extends Square {
         System.out.println("4. I want pay back the money.");
         System.out.println("5. Nothing");
         scanning(player);
-
     }
 
-    public void scanning(Player player){
-        Scanner sc;
+    private void scanning(Player player){
         int scan;
+        Scanner sc;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                goOut = false;
                 if (scan < 1 || scan > 5) {
                     System.out.println("Wrong input. Please give a number between 1-5.");
                     goOut = true;
@@ -51,40 +47,37 @@ public class Bank extends Square {
         } while (goOut);
     }
 
-    public void littleDebit(Player player){
+    private void littleDebit(Player player){
         if (player.getHowManyDebit() + 5000 < maxLoan) {
             System.out.println("You get 5000Ft");
             player.setMoney(player.getMoney() + 5000);
             player.setHowManyDebit(player.getHowManyDebit() + 5000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
     }
 
-    public void mediumDebit(Player player){
+    private void mediumDebit(Player player){
         if (player.getHowManyDebit() + 10000 < maxLoan) {
             System.out.println("You get 10000Ft");
             player.setMoney(player.getMoney() + 10000);
             player.setHowManyDebit(player.getHowManyDebit() + 10000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
     }
 
-    public void bigDebit(Player player){
+    private void bigDebit(Player player){
         if (player.getHowManyDebit() + 15000 < maxLoan) {
             System.out.println("You get 15000Ft");
             player.setMoney(player.getMoney() + 15000);
             player.setHowManyDebit(player.getHowManyDebit() + 15000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
     }
 
-    public void refound(Player player){
+    private void refound(Player player){
         if (player.getHowManyDebit() < player.getMoney()) {
             System.out.println("You pay back your debit");
             player.setMoney(player.getMoney() - (player.getHowManyDebit() + player.getHowManyDebit() / 5));
@@ -95,8 +88,7 @@ public class Bank extends Square {
         }
     }
 
-    public void selector(int scan, Player player) {
-        goOut = false;
+    private void selector(int scan, Player player) {
         switch (scan) {
             case 1: littleDebit(player);
                 break;
@@ -113,4 +105,3 @@ public class Bank extends Square {
     }
 }
 
-/*OTP. Itt vehetsz fel hitelt, vagy törlesztheted a meglévő tartozásodat.*/

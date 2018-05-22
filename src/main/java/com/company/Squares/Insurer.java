@@ -10,10 +10,7 @@ public class Insurer extends Square {
     private int insurePrice = 1000;
     private boolean goOut;
 
-    public Insurer() {
-    }
-
-    public void getInsure(Player player) throws Exception { //ready
+    public void getInsure(Player player) {
         System.out.println("Insurer field" + '\n' + "------- -----");
         System.out.println("Your money: " + player.getMoney() + "Ft");
 
@@ -29,12 +26,12 @@ public class Insurer extends Square {
         }
 
     }
-    public void scanning(Player player){
+    private void scanning(Player player){
         int scan;
         Scanner sc;
-        goOut = false;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
                 if (scan < 1 || scan > 2) {
@@ -49,11 +46,10 @@ public class Insurer extends Square {
                 e.printStackTrace();
                 System.exit(1);
             }
-
         } while (goOut);
     }
 
-    public void selector(int scan, Player player){
+    private void selector(int scan, Player player){
         switch (scan) {
             case 1:
                 player.setInsure(true);
@@ -65,8 +61,5 @@ public class Insurer extends Square {
                 break;
         }
     }
+
 }
-
-
-
-/*- Biztosító: itt köthetsz biztosítást (ha még nincs).*/

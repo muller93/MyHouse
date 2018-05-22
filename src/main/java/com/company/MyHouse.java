@@ -37,3 +37,4 @@ public class MyHouse {
         board.table(board.move(board.getPlayers()), board.getPlayers());
         }
     }
+

@@ -4,11 +4,8 @@ package com.company.Squares;
 import com.company.Board.Square;
 import com.company.Player.Player;
 
-public class TvBurn extends Square { //ready
-    ElectroShop electroShop = new ElectroShop();
-
-    public TvBurn() {
-    }
+public class TvBurn extends Square {
+    private ElectroShop electroShop = new ElectroShop();
 
     public void tvBurn(Player player){
         System.out.println("TV Burn field" + '\n' + "-- ---- -----");
@@ -18,7 +15,7 @@ public class TvBurn extends Square { //ready
                 player.setTv(false);
                 player.setMoney(player.getMoney() + electroShop.getTvPrice());
             } else {
-                System.out.println("Your tv is broken. Unfortunetly you don't have insure.");
+                System.out.println("Your tv is broken. Unfortunately you don't have insure.");
                 player.setTv(false);
             }
         } else {
@@ -26,4 +23,3 @@ public class TvBurn extends Square { //ready
         }
     }
 }
-/*- Kigyulladt a tévéd (ha volt). Ha van biztosításod, visszakapod az árát.*/

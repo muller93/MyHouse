@@ -8,35 +8,34 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Board {
-    //Player player = new Player();
-    Dice dice = new Dice();
-    ChimneySweeper chimneySweeper = new ChimneySweeper();
-    ElectroShop electroShop = new ElectroShop();
-    Tram tram = new Tram();
-    Bank bank = new Bank();
-    BrokenWashingMachine brokenWashingMachine = new BrokenWashingMachine();
-    FreeParking freeParking = new FreeParking();
-    FurnitureShop furnitureShop = new FurnitureShop();
-    GoBack goBack = new GoBack();
-    Insurer insurer = new Insurer();
-    Littering littering = new Littering();
-    Lottery lottery = new Lottery();
-    LuckyCard luckyCard = new LuckyCard();
-    RealEstate realEstate = new RealEstate();
-    Start start = new Start();
-    TvBurn tvBurn = new TvBurn();
-    GoAhead goAhead = new GoAhead();
-    Holiday holiday = new Holiday();
-
-    int playerCount = 0;
-    int totalPlayer = 0;
-
     public Player[] getPlayers() {
         return players;
     }
 
-    Player[] players;
-    Square[] squares = new Square[21];
+    private Player player = new Player();
+    private Dice dice = new Dice();
+    private ChimneySweeper chimneySweeper = new ChimneySweeper();
+    private ElectroShop electroShop = new ElectroShop();
+    private Tram tram = new Tram();
+    private Bank bank = new Bank();
+    private BrokenWashingMachine brokenWashingMachine = new BrokenWashingMachine();
+    private FreeParking freeParking = new FreeParking();
+    private FurnitureShop furnitureShop = new FurnitureShop();
+    private GoBack goBack = new GoBack();
+    private Insurer insurer = new Insurer();
+    private Littering littering = new Littering();
+    private Lottery lottery = new Lottery();
+    private LuckyCard luckyCard = new LuckyCard();
+    private RealEstate realEstate = new RealEstate();
+    private Start start = new Start();
+    private TvBurn tvBurn = new TvBurn();
+    private GoAhead goAhead = new GoAhead();
+    private Holiday holiday = new Holiday();
+
+    int playerCount = 0;
+    private int totalPlayer = 0;
+    private Player[] players;
+    private Square[] squares = new Square[21];
 
     public Board(int totalPlayer) {
         players = new Player[totalPlayer];
@@ -54,7 +53,8 @@ public class Board {
                     "2. Exit" );
             scanning(players[playerCount]);
         } else {
-            System.out.println("Your turn" + players[playerCount] + ". Current position is " + players[playerCount].getCurrentPosition() + ". Your money: " + players[playerCount].getMoney() + "Ft. If you want throw with dice, please press any button and press enter.");
+
+            System.out.println("================================================================================================================"+'\n'+"Your turn" + players[playerCount] + ". Current position is " + players[playerCount].getCurrentPosition() + ". Your money: " + players[playerCount].getMoney() + "Ft. If you want throw with dice, please press enter.");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
             
@@ -88,7 +88,7 @@ public class Board {
     }
 
 
-    public void scanning(Player player) {
+    private void scanning(Player player) {
         boolean end = false;
         int scan;
         Scanner sc;
@@ -96,7 +96,7 @@ public class Board {
             try {
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
-                if (scan < 1 && scan > 2) {
+                if (scan < 1 || scan > 2) {
                     System.out.println("Wrong input. Please give 1 or 2.");
                     end = true;
                 }
@@ -112,7 +112,7 @@ public class Board {
         } while (end);
     }
 
-    public void selector(int scan) throws Exception {
+    private void selector(int scan) throws Exception {
         switch (scan) {
             case 1:
                 MyHouse myHouse = new MyHouse();

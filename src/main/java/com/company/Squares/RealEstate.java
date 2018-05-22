@@ -6,12 +6,9 @@ import com.company.Player.Player;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RealEstate extends Square { //ready
-    private int housePrice = 50000;
+public class RealEstate extends Square {
     private boolean goOut;
-
-    public RealEstate() {
-    }
+    private int housePrice = 50000;
 
     public void getHouse(Player player) {
         System.out.println("Buy House field" + '\n' + "--- ----- -----");
@@ -28,12 +25,12 @@ public class RealEstate extends Square { //ready
         }
     }
 
-    public void scanning(Player player) {
+    private void scanning(Player player) {
         int scan;
         Scanner sc;
-        goOut = false;
         do {
             try {
+                goOut = false;
                 sc = new Scanner(System.in);
                 scan = sc.nextInt();
                 if (scan < 1 || scan > 2) {
@@ -52,7 +49,7 @@ public class RealEstate extends Square { //ready
         } while (goOut);
     }
 
-    public void selector(int scan, Player player){
+    private void selector(int scan, Player player){
         switch (scan) {
             case 1:
                 player.setHouse(true);
@@ -65,4 +62,3 @@ public class RealEstate extends Square { //ready
         }
     }
 }
-/*- Ingatlanközvetítő, itt vehetsz lakást, ára: 50.000 Ft.*/
