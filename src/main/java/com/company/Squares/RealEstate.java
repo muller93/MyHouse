@@ -12,13 +12,13 @@ public class RealEstate extends Square {
 
     public void getHouse(Player player) {
         System.out.println("Buy House field" + '\n' + "--- ----- -----");
-        System.out.println("Your money: " + player.getMoney() + "Ft");
+        System.out.println("Your money: " + player.getMoney() + "$.");
         if (player.isHouse()) {
             System.out.println("You already have house.");
         } else if (player.getMoney() < housePrice) {
             System.out.println("You don't have enough money to buy a house.");
         } else {
-            System.out.println("Do you want buy a house? The price is " + housePrice + "Ft. Please give a number.");
+            System.out.println("Do you want buy a house? The price is " + housePrice + "$. Please give a number.");
             System.out.println("1. Yes");
             System.out.println("2. No");
             scanning(player);
@@ -54,7 +54,7 @@ public class RealEstate extends Square {
             case 1:
                 player.setHouse(true);
                 player.setMoney(player.getMoney() - housePrice);
-                System.out.println("Congratulations! You have house from now. Your money " + player.getMoney() + "Ft.");
+                System.out.println("Congratulations! You have house from now. Your money " + player.getMoney() + "$.");
                 break;
             case 2:
                 System.out.println("Ok. Maybe next time.");

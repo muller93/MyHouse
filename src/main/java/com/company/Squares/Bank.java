@@ -13,14 +13,14 @@ public class Bank extends Square {
     public void takeUpLoan(Player player) {
         int canLoan = maxLoan - player.getHowManyDebit();
         System.out.println("Bank field" + '\n' + "---- -----");
-        System.out.println("Your money: " + player.getMoney());
-        System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + (canLoan - 1));
-        System.out.println("Welcome to our bank. What would you like? Please select a number. You have to pay back the 120% of amount");
-        System.out.println("1. I want take up 5000");
-        System.out.println("2. I want take up 10000");
-        System.out.println("3. I want take up 15000");
+        System.out.println("Your money: " + player.getMoney() + "$.");
+        System.out.println("Your currently debit is " + player.getHowManyDebit() + ". You can take up " + (canLoan - 1) + "$.");
+        System.out.println("Welcome to our bank. What would you like? Please select a number. You have to pay back the 120% of amount.");
+        System.out.println("1. I want take up 5000$.");
+        System.out.println("2. I want take up 10000$.");
+        System.out.println("3. I want take up 15000$.");
         System.out.println("4. I want pay back the money.");
-        System.out.println("5. Nothing");
+        System.out.println("5. I'm just looking.");
         scanning(player);
     }
 
@@ -49,9 +49,10 @@ public class Bank extends Square {
 
     private void littleDebit(Player player){
         if (player.getHowManyDebit() + 5000 < maxLoan) {
-            System.out.println("You get 5000Ft");
+            System.out.println("You get 5000$");
             player.setMoney(player.getMoney() + 5000);
             player.setHowManyDebit(player.getHowManyDebit() + 5000);
+            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
@@ -59,9 +60,10 @@ public class Bank extends Square {
 
     private void mediumDebit(Player player){
         if (player.getHowManyDebit() + 10000 < maxLoan) {
-            System.out.println("You get 10000Ft");
+            System.out.println("You get 10000$");
             player.setMoney(player.getMoney() + 10000);
             player.setHowManyDebit(player.getHowManyDebit() + 10000);
+            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
@@ -69,17 +71,18 @@ public class Bank extends Square {
 
     private void bigDebit(Player player){
         if (player.getHowManyDebit() + 15000 < maxLoan) {
-            System.out.println("You get 15000Ft");
+            System.out.println("You get 15000$");
             player.setMoney(player.getMoney() + 15000);
             player.setHowManyDebit(player.getHowManyDebit() + 15000);
+            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
     }
 
-    private void refound(Player player){
+    private void reFound(Player player){
         if (player.getHowManyDebit() < player.getMoney()) {
-            System.out.println("You pay back your debit");
+            System.out.println("You pay back your debit.");
             player.setMoney(player.getMoney() - (player.getHowManyDebit() + player.getHowManyDebit() / 5));
             player.setHowManyDebit(0);
             System.out.println("Your money " + player.getMoney());
@@ -96,7 +99,7 @@ public class Bank extends Square {
                 break;
             case 3: bigDebit(player);
                 break;
-            case 4: refound(player);
+            case 4: reFound(player);
                 break;
             case 5:
                 System.out.println("Ok.");

@@ -8,10 +8,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Board {
-    public Player[] getPlayers() {
-        return players;
-    }
-
     private Dice dice = new Dice();
     private ChimneySweeper chimneySweeper = new ChimneySweeper();
     private ElectroShop electroShop = new ElectroShop();
@@ -31,11 +27,7 @@ public class Board {
     private GoAhead goAhead = new GoAhead();
     private Holiday holiday = new Holiday();
 
-    public int getPlayerCount() {
-        return playerCount;
-    }
-
-    int playerCount = 0;
+    private int playerCount = 0;
     private int totalPlayer = 0;
     private Player[] players;
     private Square[] squares = new Square[21];
@@ -48,19 +40,23 @@ public class Board {
         }
     }
 
+    public Player[] getPlayers() {
+        return players;
+    }
+
     public int move(Player[] players) {
         if (players[playerCount].isWin(players[playerCount])) {
-            System.out.println("Congratulations, you won!" + '\n' +
+            System.out.println("Congratulations" + players[playerCount]+ ", you won!" + '\n' +
             "What do you want?" + '\n' +
                     "1. I want play again" + '\n' +
                     "2. Exit" );
             scanning(players[playerCount]);
         } else {
 
-            System.out.println('\n'+"================================================================================================================"+'\n'+"Your turn" + players[playerCount] + ". Current position is " + players[playerCount].getCurrentPosition() + ". Your money: " + players[playerCount].getMoney() + "Ft. If you want throw with dice, please press enter.");
+            System.out.println('\n'+"================================================================================================================"+'\n'+"Your turn" + players[playerCount] + ". Current position is " + players[playerCount].getCurrentPosition() + ". Your money: " + players[playerCount].getMoney() + "$. If you want throw with dice, please press enter.");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
-            
+
             int throwing = dice.throwDice();
             players[playerCount].setPosition(players[playerCount].getCurrentPosition() + throwing);
             if (players[playerCount].getCurrentPosition() > 20) {
@@ -69,7 +65,7 @@ public class Board {
                     players[playerCount].setMoney(players[playerCount].getMoney() + 6000);
                 } else if (players[playerCount].getCurrentPosition() > 1) {
                     players[playerCount].setMoney(players[playerCount].getMoney() + 4000);
-                    System.out.println("You go through the start field, and got 4000Ft.");
+                    System.out.println("You go through the start field, and got 4000$.");
                 }
             }
             System.out.println("You thrown " + throwing + " and you arrived, the " + players[playerCount].getCurrentPosition() + ". position." + '\n');
@@ -87,7 +83,6 @@ public class Board {
             playerCount = 0;
         }
     }
-
 
     private void scanning(Player player) {
         boolean end = false;
@@ -124,7 +119,7 @@ public class Board {
         }
     }
 
-    public void table(int playerPos, Player[] players) throws Exception {
+    public void table(int playerPos, Player[] players){
             switch (playerPos){
                 case 1: squares[1] = new Start();
                     start.atStart(players[playerCount]);

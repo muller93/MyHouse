@@ -4,6 +4,7 @@ public class Player {
     private int position = 1;
     private int id;
     private String name;
+    private int howManyDebit = 0;
 
     private int money = 20000;
     private boolean house = false;
@@ -17,20 +18,13 @@ public class Player {
     private boolean washingMachine = false;
     private boolean radio = false;
 
-    private int howManyDebit = 0;
-
     public Player(int id, String name) {
         this.id = id;
         this.name = name;
     }
-    public Player() {
-
-    }
 
     public boolean hasHouse(){
-        if (isHouse()) {
-            return true;
-        }else return false;
+        return isHouse();
     }
 
     public void alreadyHaveFurniture() {
@@ -65,10 +59,7 @@ public class Player {
     }
 
     public boolean isWin(Player player){
-        if(howManyDebit == 0 && house && armchair && couch && kitchenFurniture && hoover && tv && bed && washingMachine && radio) {
-            return true;
-        }
-        return false;
+        return howManyDebit == 0 && house && armchair && couch && kitchenFurniture && hoover && tv && bed && washingMachine && radio;
     }
 
     public int getMoney() {

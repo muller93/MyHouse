@@ -16,12 +16,12 @@ public class ElectroShop extends Square{
     public void electroShop(Player player) {
         if (player.hasHouse()) {
         System.out.println("Electro Shop field" + '\n' + "------- ---- -----");
-        System.out.println("Your money: " + player.getMoney() + "Ft" + '\n' + "Do you want buy any electronic device? Please enter a number. Your money: " + player.getMoney());
+        System.out.println("Your money: " + player.getMoney() + "$" + '\n' + "Do you want buy any electronic device? Please enter a number. Your money: " + player.getMoney() + "$.");
         player.alreadyHaveElectro();
-        System.out.println("1. Washing machine. Price: " + washMachPrice);
-        System.out.println("2. TV. Price: " + tvPrice);
-        System.out.println("3. Hoover. Price: " + hooverPrice);
-        System.out.println("4. Radio. Price: " + radioPrice);
+        System.out.println('\n' + "1. Washing machine. Price: " + washMachPrice + "$.");
+        System.out.println("2. TV. Price: " + tvPrice + "$.");
+        System.out.println("3. Hoover. Price: " + hooverPrice + "$.");
+        System.out.println("4. Radio. Price: " + radioPrice + "$.");
         System.out.println("5. No, thanks.");
         scanning(player);
         } else System.out.println("You can't buy any electronic device, until you don't have house.");
@@ -54,7 +54,7 @@ public class ElectroShop extends Square{
             if (!player.isWashingMachine()) {
                 player.setWashingMachine(true);
                 player.setMoney(player.getMoney() - washMachPrice);
-                System.out.println("You bought a new washing machine. Your money: " + player.getMoney() + "Ft");
+                System.out.println("You bought a new washing machine. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a washing machine.");
             }
@@ -68,7 +68,7 @@ public class ElectroShop extends Square{
             if (!player.isTv()) {
                 player.setTv(true);
                 player.setMoney(player.getMoney() - tvPrice);
-                System.out.println("You bought a new TV. Your money: " + player.getMoney() + "Ft");
+                System.out.println("You bought a new TV. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a TV.");
             }
@@ -82,7 +82,7 @@ public class ElectroShop extends Square{
             if (!player.isHoover()) {
                 player.setHoover(true);
                 player.setMoney(player.getMoney() - hooverPrice);
-                System.out.println("You bought a new hoover. Your money: " + player.getMoney() + "Ft");
+                System.out.println("You bought a new hoover. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a hoover.");
             }
@@ -96,7 +96,7 @@ public class ElectroShop extends Square{
             if (!player.isRadio()) {
                 player.setRadio(true);
                 player.setMoney(player.getMoney() - radioPrice);
-                System.out.println("You bought a new radio. Your money: " + player.getMoney() + "Ft");
+                System.out.println("You bought a new radio. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a radio.");
             }

@@ -16,13 +16,13 @@ public class FurnitureShop extends Square {
     public void furnitureShop(Player player) {
         if (player.hasHouse()) {
             System.out.println("Furniture Shop field" + '\n' + "--------- ---- -----");
-            System.out.println("Your money: " + player.getMoney() + "Ft");
+            System.out.println("Your money: " + player.getMoney() + "$.");
             System.out.println("Do you want buy any furniture? Please enter a number.");
             player.alreadyHaveFurniture();
-            System.out.println("1. Armchair. Price: " + armchairPrice);
-            System.out.println("2. Couch. Price: " + couchPrice);
-            System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice);
-            System.out.println("4. Bed. Price: " + bedPrice);
+            System.out.println('\n' + "1. Armchair. Price: " + armchairPrice + "$.");
+            System.out.println("2. Couch. Price: " + couchPrice + "$.");
+            System.out.println("3. Kitchen furniture. Price: " + kitchenFurnitrePrice + "$.");
+            System.out.println("4. Bed. Price: " + bedPrice + "$.");
             System.out.println("5. No, thanks.");
             scanning(player);
         }else System.out.println("You can't buy any furniture, until you don't have house.");
@@ -56,7 +56,7 @@ public class FurnitureShop extends Square {
             if (!player.isArmchair()) {
                 player.setArmchair(true);
                 player.setMoney(player.getMoney() - armchairPrice);
-                System.out.println("You bought a new armchair. Your money: " + player.getMoney());
+                System.out.println("You bought a new armchair. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a armchair.");
             }
@@ -70,7 +70,7 @@ public class FurnitureShop extends Square {
             if (!player.isCouch()) {
                 player.setCouch(true);
                 player.setMoney(player.getMoney() - couchPrice);
-                System.out.println("You bought a new couch. Your money: " + player.getMoney());
+                System.out.println("You bought a new couch. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a couch.");
             }
@@ -84,7 +84,7 @@ public class FurnitureShop extends Square {
             if (!player.isKitchenFurniture()) {
                 player.setKitchenFurniture(true);
                 player.setMoney(player.getMoney() - kitchenFurnitrePrice);
-                System.out.println("You bought a new kitchen furniture. Your money: " + player.getMoney());
+                System.out.println("You bought a new kitchen furniture. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a kitchen furniure.");
             }
@@ -98,7 +98,7 @@ public class FurnitureShop extends Square {
             if (!player.isBed()) {
                 player.setBed(true);
                 player.setMoney(player.getMoney() - bedPrice);
-                System.out.println("You bought a new bed. Your money: " + player.getMoney());
+                System.out.println("You bought a new bed. Your money: " + player.getMoney() + "$.");
             } else {
                 System.out.println("You already have a bed.");
             }

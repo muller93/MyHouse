@@ -8,7 +8,7 @@ public class BrokenWashingMachine extends Square {
 
     public void washMach(Player player){
         System.out.println("Broken Washing Machine field" + '\n' + "------ ------- ------- -----");
-        System.out.println("Your money: " + player.getMoney() + "Ft");
+        System.out.println("Your money: " + player.getMoney() + "$");
 
         if (player.isWashingMachine()){
             if (player.isInsure()){
