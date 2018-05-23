@@ -78,11 +78,12 @@ public class Bank extends Square {
     }
 
     private void reFound(Player player){
-        if (player.getHowManyDebit() < player.getMoney()) {
+        int interest = (player.getHowManyDebit() + player.getHowManyDebit() / 5);
+        if (interest < player.getMoney()) {
             System.out.println("You pay back your debit.");
-            player.setMoney(player.getMoney() - (player.getHowManyDebit() + player.getHowManyDebit() / 5));
+            player.setMoney(player.getMoney() - interest);
             player.setHowManyDebit(0);
-            System.out.println("Your money " + player.getMoney());
+            System.out.println("Your money " + player.getMoney() + "$.");
         } else {
             System.out.println("You don't have enough money. You can't pay back your debit.");
         }
