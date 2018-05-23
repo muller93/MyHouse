@@ -11,6 +11,7 @@ How can win?
 If you have a house and all equipment and you don't have debit, you will win.
 
 Some screenshots:
-![screenshot from 2018-05-17 22-56-11](https://user-images.githubusercontent.com/23615656/40203490-ada6448a-5a25-11e8-93bf-c3651d792860.png)
-![screenshot from 2018-05-17 23-00-07](https://user-images.githubusercontent.com/23615656/40203627-1b70e04c-5a26-11e8-8f6c-e108b5844976.png)
-![screenshot from 2018-05-17 22-57-54](https://user-images.githubusercontent.com/23615656/40203642-2463ed70-5a26-11e8-9854-d0550462dc17.png)
+
+![screenshot from 2018-05-23 10-03-12](https://user-images.githubusercontent.com/23615656/40411376-91f0f1aa-5e70-11e8-999f-412452eb240f.png)
+![screenshot from 2018-05-23 09-58-56](https://user-images.githubusercontent.com/23615656/40411262-36b78c18-5e70-11e8-8f8e-1d3208c0ac3f.png)
+![screenshot from 2018-05-23 09-58-44](https://user-images.githubusercontent.com/23615656/40411264-380ca94a-5e70-11e8-805b-3abe9cbe3f74.png)
