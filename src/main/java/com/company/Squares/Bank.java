@@ -49,10 +49,9 @@ public class Bank extends Square {
 
     private void littleDebit(Player player){
         if (player.getHowManyDebit() + 5000 < maxLoan) {
-            System.out.println("You get 5000$");
+            System.out.println("You get 5000$.");
             player.setMoney(player.getMoney() + 5000);
             player.setHowManyDebit(player.getHowManyDebit() + 5000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
@@ -60,10 +59,9 @@ public class Bank extends Square {
 
     private void mediumDebit(Player player){
         if (player.getHowManyDebit() + 10000 < maxLoan) {
-            System.out.println("You get 10000$");
+            System.out.println("You get 10000$.");
             player.setMoney(player.getMoney() + 10000);
             player.setHowManyDebit(player.getHowManyDebit() + 10000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }
@@ -71,10 +69,9 @@ public class Bank extends Square {
 
     private void bigDebit(Player player){
         if (player.getHowManyDebit() + 15000 < maxLoan) {
-            System.out.println("You get 15000$");
+            System.out.println("You get 15000$.");
             player.setMoney(player.getMoney() + 15000);
             player.setHowManyDebit(player.getHowManyDebit() + 15000);
-            System.out.println(player.getMoney());
         } else {
             System.out.println("You can't take up the debit. You reach the credit limit.");
         }

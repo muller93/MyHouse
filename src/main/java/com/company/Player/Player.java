@@ -23,6 +23,9 @@ public class Player {
         this.name = name;
     }
 
+    public Player() {
+    }
+
     public boolean hasHouse(){
         return isHouse();
     }
