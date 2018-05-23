@@ -15,7 +15,11 @@ public class RealEstate extends Square {
         System.out.println("Your money: " + player.getMoney() + "$.");
         if (player.isHouse()) {
             System.out.println("You already have house.");
-        } else if (player.getMoney() < housePrice) {
+        } else notEnoughMoney(player);
+    }
+
+    private void notEnoughMoney(Player player){
+        if (player.getMoney() < housePrice) {
             System.out.println("You don't have enough money to buy a house.");
         } else {
             System.out.println("Do you want buy a house? The price is " + housePrice + "$. Please give a number.");

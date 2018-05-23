@@ -105,7 +105,7 @@ public class ElectroShop extends Square{
         }
     }
 
-    private void selector(int scan, Player player) {
+    public void selector(int scan, Player player) {
         switch (scan) {
             case 1: getWashMach(player);
                 break;

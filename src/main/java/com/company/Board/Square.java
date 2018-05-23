@@ -1,3 +1,4 @@
 package com.company.Board;
 
-public abstract class Square {}
+public abstract class Square {
+}

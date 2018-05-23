@@ -13,10 +13,13 @@ public class Insurer extends Square {
     public void getInsure(Player player) {
         System.out.println("Insurer field" + '\n' + "------- -----");
         System.out.println("Your money: " + player.getMoney() + "$.");
-
         if (player.isInsure()) {
             System.out.println("You already have insure.");
-        } else if (player.getMoney() < insurePrice) {
+        } else notEnoughMoney(player);
+    }
+
+    private void notEnoughMoney(Player player){
+        if (player.getMoney() < insurePrice) {
             System.out.println("You don't have enough money.");
         } else {
             System.out.println("Do you want insurance? The price is " + insurePrice + "$. Please give a number.");
@@ -24,8 +27,8 @@ public class Insurer extends Square {
             System.out.println("2. No");
             scanning(player);
         }
-
     }
+
     private void scanning(Player player){
         int scan;
         Scanner sc;

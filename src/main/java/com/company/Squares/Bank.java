@@ -24,7 +24,7 @@ public class Bank extends Square {
         scanning(player);
     }
 
-    private void scanning(Player player){
+    public void scanning(Player player){
         int scan;
         Scanner sc;
         do {
@@ -91,7 +91,7 @@ public class Bank extends Square {
         }
     }
 
-    private void selector(int scan, Player player) {
+    public void selector(int scan, Player player) {
         switch (scan) {
             case 1: littleDebit(player);
                 break;

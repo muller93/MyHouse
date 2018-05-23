@@ -32,7 +32,7 @@ public class MyHouse {
         game.startGame(totalPlayer);
     }
 
-    private void startGame(int totalPlayer) throws Exception {
+    private void startGame(int totalPlayer) {
         Board board = new Board(totalPlayer);
         board.table(board.move(board.getPlayers()), board.getPlayers());
         }

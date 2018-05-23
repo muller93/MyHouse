@@ -44,37 +44,40 @@ public class Board {
         return players;
     }
 
-    public int move(Player[] players) {
+    public void winning(){
         if (players[playerCount].isWin(players[playerCount])) {
             System.out.println("Congratulations" + players[playerCount]+ ", you won!" + '\n' +
-            "What do you want?" + '\n' +
+                    "What do you want?" + '\n' +
                     "1. I want play again" + '\n' +
                     "2. Exit" );
             scanning(players[playerCount]);
-        } else {
+        }
+    }
 
+    public void newRound(){
+        if (players[playerCount].getCurrentPosition() > 20) {
+            players[playerCount].setPosition(players[playerCount].getCurrentPosition() - 20);
+            if (players[playerCount].getCurrentPosition() == 1) {
+                players[playerCount].setMoney(players[playerCount].getMoney() + 6000);
+            } else if (players[playerCount].getCurrentPosition() > 1) {
+                players[playerCount].setMoney(players[playerCount].getMoney() + 4000);
+                System.out.println("You go through the start field, and got 4000$.");
+            }
+        }
+    }
+
+    public int move(Player[] players) {
             System.out.println('\n'+"================================================================================================================"+'\n'+"Your turn" + players[playerCount] + ". Current position is " + players[playerCount].getCurrentPosition() + ". Your money: " + players[playerCount].getMoney() + "$. If you want throw with dice, please press enter.");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
-
             int throwing = dice.throwDice();
             players[playerCount].setPosition(players[playerCount].getCurrentPosition() + throwing);
-            if (players[playerCount].getCurrentPosition() > 20) {
-                players[playerCount].setPosition(players[playerCount].getCurrentPosition() - 20);
-                if (players[playerCount].getCurrentPosition() == 1) {
-                    players[playerCount].setMoney(players[playerCount].getMoney() + 6000);
-                } else if (players[playerCount].getCurrentPosition() > 1) {
-                    players[playerCount].setMoney(players[playerCount].getMoney() + 4000);
-                    System.out.println("You go through the start field, and got 4000$.");
-                }
-            }
+            newRound();
             System.out.println("You thrown " + throwing + " and you arrived, the " + players[playerCount].getCurrentPosition() + ". position." + '\n');
             int playerPos = players[playerCount].getCurrentPosition();
             return playerPos;
         }
-        int playerPos = players[playerCount].getCurrentPosition();
-        return playerPos;
-    }
+
 
     public void changePlayer(){
         if (playerCount < totalPlayer - 1){
@@ -135,6 +138,7 @@ public class Board {
 
                 case 3: squares[3] = new ElectroShop();
                     electroShop.electroShop(players[playerCount]);
+                    winning();
                     changePlayer();
                     table(move(players), players);
                     break;
@@ -165,6 +169,7 @@ public class Board {
 
                 case 8: squares[8] = new FurnitureShop();
                     furnitureShop.furnitureShop(players[playerCount]);
+                    winning();
                     changePlayer();
                     table(move(players), players);
                     break;
@@ -225,6 +230,7 @@ public class Board {
 
                 case 18: squares[18] = new Bank();
                     bank.takeUpLoan(players[playerCount]);
+                    winning();
                     changePlayer();
                     table(move(players), players);
                     break;
