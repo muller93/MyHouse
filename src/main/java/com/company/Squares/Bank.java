@@ -19,7 +19,7 @@ public class Bank extends Square {
         System.out.println("1. I want take up 5000$.");
         System.out.println("2. I want take up 10000$.");
         System.out.println("3. I want take up 15000$.");
-        System.out.println("4. I want pay back the money.");
+        System.out.println("4. I would like pay back the money.");
         System.out.println("5. I'm just looking.");
         scanning(player);
     }

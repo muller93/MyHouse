@@ -7,6 +7,6 @@ public class FreeParking extends Square{
 
     public void freeP(Player player){
         System.out.println("Free Parking field" + '\n' + "---- ------- -----");
-        System.out.println("You can parking free.");
+        System.out.println("You just parking free.");
     }
 }
